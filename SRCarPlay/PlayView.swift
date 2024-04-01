@@ -13,10 +13,17 @@ struct PlayView: View {
     var episodes: Episodes
     @State private var player: AVPlayer?
     @State private var isPlaying = false
+    @State private var currentTime = 0.0
+    @State private var duration = 0.0
+    @State private var timer: Timer? = nil
 
     var body: some View {
         VStack {
-            Text("Hello, World!")
+            HStack {
+                Text("\(Int(currentTime)) s")
+                Slider(value: $currentTime, in: 0...duration, onEditingChanged: sliderEditingChanged)
+                Text("\(Int(duration - currentTime)) s left")
+            }
             HStack {
                 Button(action: {
                     player?.seek(to: .zero)
@@ -70,6 +77,9 @@ struct PlayView: View {
         .onAppear {
             play()
         }
+        .onDisappear {
+            timer?.invalidate()
+        }
     }
     
     private func play() {
@@ -79,5 +89,19 @@ struct PlayView: View {
         player = AVPlayer(url: url)
         player?.play()
         isPlaying = true
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            currentTime = player?.currentTime().seconds ?? 0
+            duration = player?.currentItem?.asset.duration.seconds ?? 0
+        }
+    }
+    
+    private func sliderEditingChanged(editingStarted: Bool) {
+        if editingStarted {
+            player?.pause()
+        } else {
+            player?.seek(to: CMTime(seconds: currentTime, preferredTimescale: 1))
+            player?.play()
+        }
     }
 }
