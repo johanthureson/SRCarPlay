@@ -21,10 +21,16 @@ struct NewsView: View {
     @State private var news = News(episodes: [])
 
     var body: some View {
-        List(news.episodes ?? []) { episode in
-            Text(episode.title ?? "")
+        
+        NavigationView {
+            List(news.episodes ?? []) { episode in
+                NavigationLink(destination: PlayView(episodes: episode)) {
+                    Text(episode.title ?? "")
+                }
+            }
+            .onAppear(perform: loadNews)
+            .navigationBarTitle("Nyheter", displayMode: .inline)
         }
-        .onAppear(perform: loadNews)
     }
 
     func loadNews() {

@@ -23,6 +23,7 @@
 		4D37CC632BBB1CEF00F48519 /* Downloadpodfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37CC5B2BBB1CEF00F48519 /* Downloadpodfile.swift */; };
 		4D37CC642BBB1CEF00F48519 /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37CC5C2BBB1CEF00F48519 /* Episodes.swift */; };
 		4D37CC652BBB1CEF00F48519 /* Broadcasttime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37CC5D2BBB1CEF00F48519 /* Broadcasttime.swift */; };
+		4D37CC672BBB204C00F48519 /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37CC662BBB204C00F48519 /* PlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		4D37CC5B2BBB1CEF00F48519 /* Downloadpodfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloadpodfile.swift; sourceTree = "<group>"; };
 		4D37CC5C2BBB1CEF00F48519 /* Episodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
 		4D37CC5D2BBB1CEF00F48519 /* Broadcasttime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broadcasttime.swift; sourceTree = "<group>"; };
+		4D37CC662BBB204C00F48519 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				4D37CC282BBB1B6400F48519 /* SRCarPlayApp.swift */,
 				4D37CC2A2BBB1B6400F48519 /* ContentView.swift */,
 				4D37CC522BBB1BB500F48519 /* NewsView.swift */,
+				4D37CC662BBB204C00F48519 /* PlayView.swift */,
 				4D37CC542BBB1C3000F48519 /* Models */,
 				4D37CC2C2BBB1B6500F48519 /* Assets.xcassets */,
 				4D37CC2E2BBB1B6500F48519 /* Preview Content */,
@@ -306,6 +309,7 @@
 				4D37CC5E2BBB1CEF00F48519 /* Broadcastfiles.swift in Sources */,
 				4D37CC652BBB1CEF00F48519 /* Broadcasttime.swift in Sources */,
 				4D37CC602BBB1CEF00F48519 /* Program.swift in Sources */,
+				4D37CC672BBB204C00F48519 /* PlayView.swift in Sources */,
 				4D37CC612BBB1CEF00F48519 /* Playlist.swift in Sources */,
 				4D37CC2B2BBB1B6400F48519 /* ContentView.swift in Sources */,
 				4D37CC622BBB1CEF00F48519 /* Broadcast.swift in Sources */,
