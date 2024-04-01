@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct PlayView: View {
     
     var episodes: Episodes
+    @State private var player: AVPlayer?
 
     var body: some View {
         Text("Hello, World!")
@@ -20,12 +22,10 @@ struct PlayView: View {
     }
     
     private func play() {
-        guard let urlString = episodes.broadcast?.broadcastfiles?.first?.url else { return }
+        guard let urlString = episodes.broadcast?.broadcastfiles?.first?.url,
+              let url = URL(string: urlString) else { return }
+        
+        player = AVPlayer(url: url)
+        player?.play()
     }
 }
-
-/*
-#Preview {
-    PlayView()
-}
-*/
