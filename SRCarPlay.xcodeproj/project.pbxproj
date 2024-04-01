@@ -99,6 +99,7 @@
 				4D37CC282BBB1B6400F48519 /* SRCarPlayApp.swift */,
 				4D37CC2A2BBB1B6400F48519 /* ContentView.swift */,
 				4D37CC522BBB1BB500F48519 /* NewsView.swift */,
+				4D37CC542BBB1C3000F48519 /* Models */,
 				4D37CC2C2BBB1B6500F48519 /* Assets.xcassets */,
 				4D37CC2E2BBB1B6500F48519 /* Preview Content */,
 			);
@@ -128,6 +129,21 @@
 				4D37CC452BBB1B6500F48519 /* SRCarPlayUITestsLaunchTests.swift */,
 			);
 			path = SRCarPlayUITests;
+			sourceTree = "<group>";
+		};
+		4D37CC542BBB1C3000F48519 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4D37CC552BBB1C3F00F48519 /* CodableModels */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4D37CC552BBB1C3F00F48519 /* CodableModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CodableModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
