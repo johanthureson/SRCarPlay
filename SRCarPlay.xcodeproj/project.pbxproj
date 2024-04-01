@@ -14,6 +14,7 @@
 		4D37CC3A2BBB1B6500F48519 /* SRCarPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37CC392BBB1B6500F48519 /* SRCarPlayTests.swift */; };
 		4D37CC442BBB1B6500F48519 /* SRCarPlayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37CC432BBB1B6500F48519 /* SRCarPlayUITests.swift */; };
 		4D37CC462BBB1B6500F48519 /* SRCarPlayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37CC452BBB1B6500F48519 /* SRCarPlayUITestsLaunchTests.swift */; };
+		4D37CC532BBB1BB500F48519 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37CC522BBB1BB500F48519 /* NewsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		4D37CC3F2BBB1B6500F48519 /* SRCarPlayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SRCarPlayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D37CC432BBB1B6500F48519 /* SRCarPlayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRCarPlayUITests.swift; sourceTree = "<group>"; };
 		4D37CC452BBB1B6500F48519 /* SRCarPlayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRCarPlayUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4D37CC522BBB1BB500F48519 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				4D37CC282BBB1B6400F48519 /* SRCarPlayApp.swift */,
 				4D37CC2A2BBB1B6400F48519 /* ContentView.swift */,
+				4D37CC522BBB1BB500F48519 /* NewsView.swift */,
 				4D37CC2C2BBB1B6500F48519 /* Assets.xcassets */,
 				4D37CC2E2BBB1B6500F48519 /* Preview Content */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D37CC532BBB1BB500F48519 /* NewsView.swift in Sources */,
 				4D37CC2B2BBB1B6400F48519 /* ContentView.swift in Sources */,
 				4D37CC292BBB1B6400F48519 /* SRCarPlayApp.swift in Sources */,
 			);
