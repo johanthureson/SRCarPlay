@@ -1,5 +1,5 @@
 import Foundation
-struct Episodes : Codable {
+struct Episodes : Codable, Identifiable {
 	let id : Int?
 	let title : String?
 	let description : String?
