@@ -14,6 +14,13 @@ struct PlayView: View {
     var body: some View {
         Text("Hello, World!")
             .navigationBarTitle(Text(episodes.title ?? ""), displayMode: .inline)
+            .onAppear {
+                play()
+            }
+    }
+    
+    private func play() {
+        guard let urlString = episodes.broadcast?.broadcastfiles?.first?.url else { return }
     }
 }
 
