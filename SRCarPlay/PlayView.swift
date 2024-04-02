@@ -90,7 +90,7 @@ struct PlayView: View {
                 }
                 
                 Button(action: {
-                    player?.seek(to: player?.currentItem?.asset.duration ?? .zero)
+                    player?.seek(to: player?.currentItem?.duration ?? .zero)
                 }) {
                     Image(systemName: "forward.fill")
                         .resizable()
