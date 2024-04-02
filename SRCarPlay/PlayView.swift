@@ -27,7 +27,9 @@ struct PlayView: View {
             HStack {
                 
                 Button(action: {
-                    player?.seek(to: CMTime(seconds: player?.currentTime().seconds ?? 0 - 5, preferredTimescale: 1))
+                    player?.seek(to: .zero)
+                    player?.play()
+                    isPlaying = true
                 }) {
                     Image(systemName: "backward.fill")
                         .resizable()
@@ -35,9 +37,7 @@ struct PlayView: View {
                 }
 
                 Button(action: {
-                    player?.seek(to: .zero)
-                    player?.play()
-                    isPlaying = true
+                    player?.seek(to: CMTime(seconds: player?.currentTime().seconds ?? 0 - 5, preferredTimescale: 1))
                 }) {
                     Image(systemName: "gobackward")
                         .resizable()
@@ -60,7 +60,7 @@ struct PlayView: View {
                 
                 
                 Button(action: {
-                    player?.seek(to: player?.currentItem?.asset.duration ?? .zero)
+                    player?.seek(to: CMTime(seconds: player?.currentTime().seconds ?? 0 + 15, preferredTimescale: 1))
                 }) {
                     Image(systemName: "goforward")
                         .resizable()
@@ -68,7 +68,7 @@ struct PlayView: View {
                 }
                 
                 Button(action: {
-                    player?.seek(to: CMTime(seconds: player?.currentTime().seconds ?? 0 + 15, preferredTimescale: 1))
+                    player?.seek(to: player?.currentItem?.asset.duration ?? .zero)
                 }) {
                     Image(systemName: "forward.fill")
                         .resizable()
