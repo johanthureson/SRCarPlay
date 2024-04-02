@@ -14,7 +14,7 @@ struct PlayView: View {
     @State private var player: AVPlayer?
     @State private var isPlaying = false
     @State private var currentTime = 0.0
-    @State private var duration = 0.0
+    @State private var streamDuration = 0.0
     @State private var timer: Timer? = nil
     private let secondsBackward: Double = 5
     private let secondsForward: Double = 30
@@ -25,9 +25,9 @@ struct PlayView: View {
                 HStack {
                     Text("\(secondsToHoursMinutesSeconds(seconds: Int(currentTime)))")
                     Spacer()
-                    Text("-\(secondsToHoursMinutesSeconds(seconds: Int(duration - currentTime)))")
+                    Text("-\(secondsToHoursMinutesSeconds(seconds: Int(streamDuration - currentTime)))")
                 }
-                Slider(value: $currentTime, in: 0...duration, onEditingChanged: sliderEditingChanged)
+                Slider(value: $currentTime, in: 0...streamDuration, onEditingChanged: sliderEditingChanged)
             }
             .padding()
             .padding(.horizontal)
@@ -118,7 +118,7 @@ struct PlayView: View {
         
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             currentTime = player?.currentTime().seconds ?? 0
-            duration = player?.currentItem?.asset.duration.seconds ?? 0
+            streamDuration = player?.currentItem?.duration.seconds ?? 0
         }
     }
     
