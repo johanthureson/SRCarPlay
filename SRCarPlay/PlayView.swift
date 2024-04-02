@@ -25,6 +25,15 @@ struct PlayView: View {
                 Text("\(Int(duration - currentTime)) s left")
             }
             HStack {
+                
+                Button(action: {
+                    player?.seek(to: CMTime(seconds: player?.currentTime().seconds ?? 0 - 5, preferredTimescale: 1))
+                }) {
+                    Image(systemName: "backward.fill")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                }
+
                 Button(action: {
                     player?.seek(to: .zero)
                     player?.play()
@@ -35,13 +44,6 @@ struct PlayView: View {
                         .frame(width: 50, height: 50)
                 }
                 
-                Button(action: {
-                    player?.seek(to: CMTime(seconds: player?.currentTime().seconds ?? 0 - 5, preferredTimescale: 1))
-                }) {
-                    Image(systemName: "backward.fill")
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                }
                 
                 Button(action: {
                     if isPlaying {
@@ -56,13 +58,6 @@ struct PlayView: View {
                         .frame(width: 50, height: 50)
                 }
                 
-                Button(action: {
-                    player?.seek(to: CMTime(seconds: player?.currentTime().seconds ?? 0 + 15, preferredTimescale: 1))
-                }) {
-                    Image(systemName: "forward.fill")
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                }
                 
                 Button(action: {
                     player?.seek(to: player?.currentItem?.asset.duration ?? .zero)
@@ -71,6 +66,15 @@ struct PlayView: View {
                         .resizable()
                         .frame(width: 50, height: 50)
                 }
+                
+                Button(action: {
+                    player?.seek(to: CMTime(seconds: player?.currentTime().seconds ?? 0 + 15, preferredTimescale: 1))
+                }) {
+                    Image(systemName: "forward.fill")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                }
+
             }
         }
         .navigationBarTitle(Text(episodes.title ?? ""), displayMode: .inline)
