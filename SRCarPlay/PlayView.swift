@@ -22,9 +22,9 @@ struct PlayView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("\(Int(currentTime)) s")
+                Text("\(secondsToHoursMinutesSeconds(seconds: Int(currentTime)))")
                 Slider(value: $currentTime, in: 0...duration, onEditingChanged: sliderEditingChanged)
-                Text("\(Int(duration - currentTime)) s left")
+                Text("-\(secondsToHoursMinutesSeconds(seconds: Int(duration - currentTime)))")
             }
             HStack {
                 
@@ -121,6 +121,24 @@ struct PlayView: View {
             player?.play()
         }
     }
+    
+    private func secondsToHoursMinutesSeconds (seconds : Int) -> (String) {
+        let h = seconds / 3600
+        let m = (seconds % 3600) / 60
+        let s = (seconds % 3600) % 60
+        return formatDuration(h: h, m: m, s: s)
+    }
+
+    private func formatDuration(h: Int, m: Int, s: Int) -> String {
+        if m == 0 {
+            return String(format: "%2d", s)
+        }
+        if h == 0 {
+            return String(format: "%2d:%02d", m, s)
+        }
+        return String(format: "%d:%02d:%02d", h, m, s)
+    }
+
 }
 
 #Preview {
