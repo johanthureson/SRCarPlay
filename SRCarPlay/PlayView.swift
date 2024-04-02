@@ -37,7 +37,8 @@ struct PlayView: View {
                 }
 
                 Button(action: {
-                    player?.seek(to: CMTime(seconds: player?.currentTime().seconds ?? 0 - 5, preferredTimescale: 1))
+                    let cmTime = CMTime(seconds: (player?.currentTime().seconds ?? 0) - 5, preferredTimescale: 1)
+                    player?.seek(to: cmTime)
                 }) {
                     Image(systemName: "gobackward")
                         .resizable()
@@ -60,7 +61,8 @@ struct PlayView: View {
                 
                 
                 Button(action: {
-                    player?.seek(to: CMTime(seconds: player?.currentTime().seconds ?? 0 + 15, preferredTimescale: 1))
+                    print(player?.currentTime().seconds ?? 0)
+                    player?.seek(to: CMTime(seconds: (player?.currentTime().seconds ?? 0) + 30, preferredTimescale: 1))
                 }) {
                     Image(systemName: "goforward")
                         .resizable()
