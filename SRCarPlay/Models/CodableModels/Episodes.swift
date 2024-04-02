@@ -37,6 +37,25 @@ struct Episodes : Codable, Identifiable {
 		case relatedepisodes = "relatedepisodes"
 	}
 
+    init() {
+        id = 0
+        title = nil
+        description = nil
+        url = nil
+        program = nil
+        audiopreference = nil
+        audiopriority = nil
+        audiopresentation = nil
+        publishdateutc = nil
+        imageurl = nil
+        imageurltemplate = nil
+        photographer = nil
+        broadcast = nil
+        broadcasttime = nil
+        downloadpodfile = nil
+        relatedepisodes = nil
+    }
+    
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		id = try values.decodeIfPresent(Int.self, forKey: .id)
