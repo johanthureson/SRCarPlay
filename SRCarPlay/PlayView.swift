@@ -21,12 +21,21 @@ struct PlayView: View {
 
     var body: some View {
         VStack {
-            HStack {
-                Text("\(secondsToHoursMinutesSeconds(seconds: Int(currentTime)))")
+            VStack {
+                HStack {
+                    Text("\(secondsToHoursMinutesSeconds(seconds: Int(currentTime)))")
+                    Spacer()
+                    Text("-\(secondsToHoursMinutesSeconds(seconds: Int(duration - currentTime)))")
+                }
                 Slider(value: $currentTime, in: 0...duration, onEditingChanged: sliderEditingChanged)
-                Text("-\(secondsToHoursMinutesSeconds(seconds: Int(duration - currentTime)))")
             }
-            HStack {
+            .padding()
+            .padding(.horizontal)
+            
+            Spacer()
+                .frame(height: 32)
+            
+            HStack(spacing: 20) {
                 
                 Button(action: {
                     player?.seek(to: .zero)
