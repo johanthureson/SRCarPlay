@@ -16,6 +16,8 @@ struct PlayView: View {
     @State private var currentTime = 0.0
     @State private var duration = 0.0
     @State private var timer: Timer? = nil
+    private let secondsBackward: Double = 5
+    private let secondsForward: Double = 30
 
     var body: some View {
         VStack {
@@ -37,12 +39,16 @@ struct PlayView: View {
                 }
 
                 Button(action: {
-                    let cmTime = CMTime(seconds: (player?.currentTime().seconds ?? 0) - 5, preferredTimescale: 1)
+                    let cmTime = CMTime(seconds: (player?.currentTime().seconds ?? 0) - secondsBackward, preferredTimescale: 1)
                     player?.seek(to: cmTime)
                 }) {
-                    Image(systemName: "gobackward")
-                        .resizable()
-                        .frame(width: 50, height: 50)
+                    ZStack {
+                        Image(systemName: "gobackward")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                        Text(String(Int(secondsBackward)))
+                            .offset(y: 2)
+                    }
                 }
                 
                 
@@ -62,11 +68,16 @@ struct PlayView: View {
                 
                 Button(action: {
                     print(player?.currentTime().seconds ?? 0)
-                    player?.seek(to: CMTime(seconds: (player?.currentTime().seconds ?? 0) + 30, preferredTimescale: 1))
+                    player?.seek(to: CMTime(seconds: (player?.currentTime().seconds ?? 0) + secondsForward, preferredTimescale: 1))
                 }) {
-                    Image(systemName: "goforward")
-                        .resizable()
-                        .frame(width: 50, height: 50)
+                    ZStack {
+                        Image(systemName: "goforward")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                        Text(String(Int(secondsForward)))
+                            .offset(y: 2)
+                    }
+
                 }
                 
                 Button(action: {
@@ -110,4 +121,8 @@ struct PlayView: View {
             player?.play()
         }
     }
+}
+
+#Preview {
+    PlayView(episodes: Episodes())
 }
