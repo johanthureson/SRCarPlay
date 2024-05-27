@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
+import CarPlay
 
 @main
 struct SRCarPlayApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
+
     }
+    
 }
+

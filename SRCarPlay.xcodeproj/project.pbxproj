@@ -24,7 +24,8 @@
 		4D37CC642BBB1CEF00F48519 /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37CC5C2BBB1CEF00F48519 /* Episodes.swift */; };
 		4D37CC652BBB1CEF00F48519 /* Broadcasttime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37CC5D2BBB1CEF00F48519 /* Broadcasttime.swift */; };
 		4D37CC672BBB204C00F48519 /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37CC662BBB204C00F48519 /* PlayView.swift */; };
-		4DE4C5A52C04CFEA001260B5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DE4C5A42C04CFEA001260B5 /* Info.plist */; };
+		4DE4C5A72C04D7B9001260B5 /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4C5A62C04D7B9001260B5 /* CarPlaySceneDelegate.swift */; };
+		4DE4C5A92C04D809001260B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4C5A82C04D809001260B5 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		4D37CC662BBB204C00F48519 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
 		4DE4C5A22C04CF1D001260B5 /* SRCarPlay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SRCarPlay.entitlements; sourceTree = "<group>"; };
 		4DE4C5A42C04CFEA001260B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DE4C5A62C04D7B9001260B5 /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
+		4DE4C5A82C04D809001260B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 			children = (
 				4DE4C5A22C04CF1D001260B5 /* SRCarPlay.entitlements */,
 				4D37CC282BBB1B6400F48519 /* SRCarPlayApp.swift */,
+				4DE4C5A62C04D7B9001260B5 /* CarPlaySceneDelegate.swift */,
+				4DE4C5A82C04D809001260B5 /* AppDelegate.swift */,
 				4D37CC2A2BBB1B6400F48519 /* ContentView.swift */,
 				4D37CC522BBB1BB500F48519 /* NewsView.swift */,
 				4D37CC662BBB204C00F48519 /* PlayView.swift */,
@@ -292,7 +297,6 @@
 			files = (
 				4D37CC302BBB1B6500F48519 /* Preview Assets.xcassets in Resources */,
 				4D37CC2D2BBB1B6500F48519 /* Assets.xcassets in Resources */,
-				4DE4C5A52C04CFEA001260B5 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,9 +321,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DE4C5A72C04D7B9001260B5 /* CarPlaySceneDelegate.swift in Sources */,
 				4D37CC632BBB1CEF00F48519 /* Downloadpodfile.swift in Sources */,
 				4D37CC642BBB1CEF00F48519 /* Episodes.swift in Sources */,
 				4D37CC532BBB1BB500F48519 /* NewsView.swift in Sources */,
+				4DE4C5A92C04D809001260B5 /* AppDelegate.swift in Sources */,
 				4D37CC5E2BBB1CEF00F48519 /* Broadcastfiles.swift in Sources */,
 				4D37CC652BBB1CEF00F48519 /* Broadcasttime.swift in Sources */,
 				4D37CC602BBB1CEF00F48519 /* Program.swift in Sources */,
