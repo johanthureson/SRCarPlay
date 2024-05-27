@@ -24,6 +24,7 @@
 		4D37CC642BBB1CEF00F48519 /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37CC5C2BBB1CEF00F48519 /* Episodes.swift */; };
 		4D37CC652BBB1CEF00F48519 /* Broadcasttime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37CC5D2BBB1CEF00F48519 /* Broadcasttime.swift */; };
 		4D37CC672BBB204C00F48519 /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37CC662BBB204C00F48519 /* PlayView.swift */; };
+		4DE4C5A52C04CFEA001260B5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DE4C5A42C04CFEA001260B5 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		4D37CC5D2BBB1CEF00F48519 /* Broadcasttime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broadcasttime.swift; sourceTree = "<group>"; };
 		4D37CC662BBB204C00F48519 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
 		4DE4C5A22C04CF1D001260B5 /* SRCarPlay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SRCarPlay.entitlements; sourceTree = "<group>"; };
+		4DE4C5A42C04CFEA001260B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				4D37CC542BBB1C3000F48519 /* Models */,
 				4D37CC2C2BBB1B6500F48519 /* Assets.xcassets */,
 				4D37CC2E2BBB1B6500F48519 /* Preview Content */,
+				4DE4C5A32C04CFA2001260B5 /* Misc */,
 			);
 			path = SRCarPlay;
 			sourceTree = "<group>";
@@ -173,6 +176,14 @@
 				4D37CC582BBB1CEF00F48519 /* Program.swift */,
 			);
 			path = CodableModels;
+			sourceTree = "<group>";
+		};
+		4DE4C5A32C04CFA2001260B5 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				4DE4C5A42C04CFEA001260B5 /* Info.plist */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +292,7 @@
 			files = (
 				4D37CC302BBB1B6500F48519 /* Preview Assets.xcassets in Resources */,
 				4D37CC2D2BBB1B6500F48519 /* Assets.xcassets in Resources */,
+				4DE4C5A52C04CFEA001260B5 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
