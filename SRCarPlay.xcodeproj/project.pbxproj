@@ -14,6 +14,8 @@
 		4DE4C6062C05BA88001260B5 /* SRCarPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4C6052C05BA88001260B5 /* SRCarPlayTests.swift */; };
 		4DE4C6102C05BA88001260B5 /* SRCarPlayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4C60F2C05BA88001260B5 /* SRCarPlayUITests.swift */; };
 		4DE4C6122C05BA88001260B5 /* SRCarPlayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4C6112C05BA88001260B5 /* SRCarPlayUITestsLaunchTests.swift */; };
+		4DE4C6222C05BE0E001260B5 /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4C6212C05BE0E001260B5 /* CarPlaySceneDelegate.swift */; };
+		4DE4C6242C05BEBC001260B5 /* CarPlayHelloWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4C6232C05BEBC001260B5 /* CarPlayHelloWorld.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,9 @@
 		4DE4C60F2C05BA88001260B5 /* SRCarPlayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRCarPlayUITests.swift; sourceTree = "<group>"; };
 		4DE4C6112C05BA88001260B5 /* SRCarPlayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRCarPlayUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4DE4C61E2C05BBC9001260B5 /* SRCarPlay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SRCarPlay.entitlements; sourceTree = "<group>"; };
+		4DE4C61F2C05BCD2001260B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DE4C6212C05BE0E001260B5 /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
+		4DE4C6232C05BEBC001260B5 /* CarPlayHelloWorld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayHelloWorld.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +102,12 @@
 			children = (
 				4DE4C61E2C05BBC9001260B5 /* SRCarPlay.entitlements */,
 				4DE4C5F22C05BA87001260B5 /* SRCarPlayApp.swift */,
+				4DE4C6212C05BE0E001260B5 /* CarPlaySceneDelegate.swift */,
+				4DE4C6232C05BEBC001260B5 /* CarPlayHelloWorld.swift */,
 				4DE4C5F42C05BA87001260B5 /* ContentView.swift */,
 				4DE4C5F82C05BA88001260B5 /* Assets.xcassets */,
 				4DE4C5FA2C05BA88001260B5 /* Preview Content */,
+				4DE4C61F2C05BCD2001260B5 /* Info.plist */,
 			);
 			path = SRCarPlay;
 			sourceTree = "<group>";
@@ -260,6 +268,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DE4C5F52C05BA87001260B5 /* ContentView.swift in Sources */,
+				4DE4C6222C05BE0E001260B5 /* CarPlaySceneDelegate.swift in Sources */,
+				4DE4C6242C05BEBC001260B5 /* CarPlayHelloWorld.swift in Sources */,
 				4DE4C5F32C05BA87001260B5 /* SRCarPlayApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
