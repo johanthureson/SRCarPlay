@@ -23,7 +23,6 @@
 		BB17CA422A12F5A2004E4375 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB17CA412A12F5A2004E4375 /* Preview Assets.xcassets */; };
 		BB17CA4B2A12F61C004E4375 /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17CA4A2A12F61C004E4375 /* CarPlaySceneDelegate.swift */; };
 		BB17CA4D2A12F6CF004E4375 /* SRCarPlayTemlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17CA4C2A12F6CF004E4375 /* SRCarPlayTemlate.swift */; };
-		BB17CA502A12FBF1004E4375 /* entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB17CA4F2A12FBF1004E4375 /* entitlements.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,7 +181,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB17CA502A12FBF1004E4375 /* entitlements.plist in Resources */,
 				BB17CA422A12F5A2004E4375 /* Preview Assets.xcassets in Resources */,
 				BB17CA3F2A12F5A2004E4375 /* Assets.xcassets in Resources */,
 			);
