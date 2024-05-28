@@ -16,7 +16,6 @@
 		4DE4C6122C05BA88001260B5 /* SRCarPlayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4C6112C05BA88001260B5 /* SRCarPlayUITestsLaunchTests.swift */; };
 		4DE4C6222C05BE0E001260B5 /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4C6212C05BE0E001260B5 /* CarPlaySceneDelegate.swift */; };
 		4DE4C6242C05BEBC001260B5 /* CarPlayHelloWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4C6232C05BEBC001260B5 /* CarPlayHelloWorld.swift */; };
-		4DE4C6252C05CCBF001260B5 /* SRCarPlay.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 4DE4C61E2C05BBC9001260B5 /* SRCarPlay.entitlements */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -242,7 +241,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DE4C6252C05CCBF001260B5 /* SRCarPlay.entitlements in Resources */,
 				4DE4C5FC2C05BA88001260B5 /* Preview Assets.xcassets in Resources */,
 				4DE4C5F92C05BA88001260B5 /* Assets.xcassets in Resources */,
 			);
