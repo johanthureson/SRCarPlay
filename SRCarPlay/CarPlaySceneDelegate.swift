@@ -52,7 +52,8 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
         
         // Push the Now Playing Template to the interface controller
-        interfaceController?.pushTemplate(nowPlayingTemplate, animated: true)
+        interfaceController?.pushTemplate(nowPlayingTemplate, animated: true) { _, _ in
+        }
         
         // Start playing the audio
         player?.play()
