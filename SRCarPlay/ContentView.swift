@@ -11,32 +11,40 @@ struct ContentView: View {
     @State private var selectedTab = 1
     
     var body: some View {
-        TabView(selection: $selectedTab) {
-            Text("Poddar")
-                .tabItem {
-                    Image(systemName: "headphones")
-                    Text("Poddar")
-                }
-                .tag(0)
-            NewsView()
-                .tabItem {
-                    Image(systemName: "doc.text")
-                    Text("Nyheter")
-                }
-                .tag(1)
-            Text("Kanaler")
-                .tabItem {
-                    Image(systemName: "radio.fill")
-                    Text("Kanaler")
-                }
-                .tag(2)
-            Text("Min sida")
-                .tabItem {
-                    Image(systemName: "person.fill")
-                    Text("Min sida")
-                }
-                .tag(3)
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundColor(.accentColor)
+            Text("Hello, world!")
         }
+        .padding()
+//
+//        TabView(selection: $selectedTab) {
+//            Text("Poddar")
+//                .tabItem {
+//                    Image(systemName: "headphones")
+//                    Text("Poddar")
+//                }
+//                .tag(0)
+//            NewsView()
+//                .tabItem {
+//                    Image(systemName: "doc.text")
+//                    Text("Nyheter")
+//                }
+//                .tag(1)
+//            Text("Kanaler")
+//                .tabItem {
+//                    Image(systemName: "radio.fill")
+//                    Text("Kanaler")
+//                }
+//                .tag(2)
+//            Text("Min sida")
+//                .tabItem {
+//                    Image(systemName: "person.fill")
+//                    Text("Min sida")
+//                }
+//                .tag(3)
+//        }
     }
 }
 
