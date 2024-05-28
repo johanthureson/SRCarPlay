@@ -12,7 +12,7 @@ class SRCarPlayTemlate {
     }
     
     var items: [CPListItem] {
-        return [CPListItem(text:"Hello world", detailText: "The world of CarPlay", image: UIImage(systemName: "globe"))]
+        return [CPListItem(text:"Hello world", detailText: "The world of CarPlay 7", image: UIImage(systemName: "globe"))]
     }
     
     private var section: CPListSection {

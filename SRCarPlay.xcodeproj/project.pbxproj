@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DB3BCC02C05E1AD00C3472A /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCBF2C05E1AD00C3472A /* NewsView.swift */; };
+		4DB3BCC22C05E1B600C3472A /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCC12C05E1B600C3472A /* PlayView.swift */; };
+		4DB3BCCD2C05E1C400C3472A /* Broadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCC32C05E1C400C3472A /* Broadcast.swift */; };
+		4DB3BCCE2C05E1C400C3472A /* Broadcastfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCC42C05E1C400C3472A /* Broadcastfiles.swift */; };
+		4DB3BCCF2C05E1C400C3472A /* Broadcasttime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCC52C05E1C400C3472A /* Broadcasttime.swift */; };
+		4DB3BCD02C05E1C400C3472A /* Downloadpodfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCC62C05E1C400C3472A /* Downloadpodfile.swift */; };
+		4DB3BCD12C05E1C400C3472A /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCC72C05E1C400C3472A /* Episodes.swift */; };
+		4DB3BCD22C05E1C400C3472A /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCC82C05E1C400C3472A /* News.swift */; };
+		4DB3BCD32C05E1C400C3472A /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCC92C05E1C400C3472A /* Playlist.swift */; };
+		4DB3BCD42C05E1C400C3472A /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCCA2C05E1C400C3472A /* Program.swift */; };
 		BB17CA3B2A12F59F004E4375 /* SRCarPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17CA3A2A12F59F004E4375 /* SRCarPlayApp.swift */; };
 		BB17CA3D2A12F59F004E4375 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17CA3C2A12F59F004E4375 /* ContentView.swift */; };
 		BB17CA3F2A12F5A2004E4375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB17CA3E2A12F5A2004E4375 /* Assets.xcassets */; };
@@ -17,6 +27,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4DB3BCBF2C05E1AD00C3472A /* NewsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
+		4DB3BCC12C05E1B600C3472A /* PlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
+		4DB3BCC32C05E1C400C3472A /* Broadcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broadcast.swift; sourceTree = "<group>"; };
+		4DB3BCC42C05E1C400C3472A /* Broadcastfiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broadcastfiles.swift; sourceTree = "<group>"; };
+		4DB3BCC52C05E1C400C3472A /* Broadcasttime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broadcasttime.swift; sourceTree = "<group>"; };
+		4DB3BCC62C05E1C400C3472A /* Downloadpodfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloadpodfile.swift; sourceTree = "<group>"; };
+		4DB3BCC72C05E1C400C3472A /* Episodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
+		4DB3BCC82C05E1C400C3472A /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		4DB3BCC92C05E1C400C3472A /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		4DB3BCCA2C05E1C400C3472A /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		BB17CA372A12F59F004E4375 /* SRCarPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SRCarPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB17CA3A2A12F59F004E4375 /* SRCarPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRCarPlayApp.swift; sourceTree = "<group>"; };
 		BB17CA3C2A12F59F004E4375 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +59,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DB3BCCB2C05E1C400C3472A /* CodableModels */ = {
+			isa = PBXGroup;
+			children = (
+				4DB3BCC32C05E1C400C3472A /* Broadcast.swift */,
+				4DB3BCC42C05E1C400C3472A /* Broadcastfiles.swift */,
+				4DB3BCC52C05E1C400C3472A /* Broadcasttime.swift */,
+				4DB3BCC62C05E1C400C3472A /* Downloadpodfile.swift */,
+				4DB3BCC72C05E1C400C3472A /* Episodes.swift */,
+				4DB3BCC82C05E1C400C3472A /* News.swift */,
+				4DB3BCC92C05E1C400C3472A /* Playlist.swift */,
+				4DB3BCCA2C05E1C400C3472A /* Program.swift */,
+			);
+			path = CodableModels;
+			sourceTree = "<group>";
+		};
+		4DB3BCCC2C05E1C400C3472A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4DB3BCCB2C05E1C400C3472A /* CodableModels */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BB17CA2E2A12F59F004E4375 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +107,9 @@
 				BB17CA4F2A12FBF1004E4375 /* entitlements.plist */,
 				BB17CA4C2A12F6CF004E4375 /* SRCarPlayTemlate.swift */,
 				BB17CA3C2A12F59F004E4375 /* ContentView.swift */,
+				4DB3BCBF2C05E1AD00C3472A /* NewsView.swift */,
+				4DB3BCC12C05E1B600C3472A /* PlayView.swift */,
+				4DB3BCCC2C05E1C400C3472A /* Models */,
 				BB17CA3E2A12F5A2004E4375 /* Assets.xcassets */,
 				BB17CA402A12F5A2004E4375 /* Preview Content */,
 			);
@@ -149,9 +195,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DB3BCC22C05E1B600C3472A /* PlayView.swift in Sources */,
+				4DB3BCD32C05E1C400C3472A /* Playlist.swift in Sources */,
 				BB17CA3D2A12F59F004E4375 /* ContentView.swift in Sources */,
 				BB17CA4B2A12F61C004E4375 /* CarPlaySceneDelegate.swift in Sources */,
+				4DB3BCD42C05E1C400C3472A /* Program.swift in Sources */,
+				4DB3BCD02C05E1C400C3472A /* Downloadpodfile.swift in Sources */,
+				4DB3BCCD2C05E1C400C3472A /* Broadcast.swift in Sources */,
 				BB17CA4D2A12F6CF004E4375 /* SRCarPlayTemlate.swift in Sources */,
+				4DB3BCD22C05E1C400C3472A /* News.swift in Sources */,
+				4DB3BCCE2C05E1C400C3472A /* Broadcastfiles.swift in Sources */,
+				4DB3BCC02C05E1AD00C3472A /* NewsView.swift in Sources */,
+				4DB3BCCF2C05E1C400C3472A /* Broadcasttime.swift in Sources */,
+				4DB3BCD12C05E1C400C3472A /* Episodes.swift in Sources */,
 				BB17CA3B2A12F59F004E4375 /* SRCarPlayApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
