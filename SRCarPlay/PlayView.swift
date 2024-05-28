@@ -118,9 +118,14 @@ struct PlayView: View {
         
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             currentTime = player?.currentTime().seconds ?? 0
-            streamDuration = player?.currentItem?.duration.seconds ?? 0
-            if streamDuration.isNaN {
+            guard let seconds = player?.currentItem?.duration.seconds else {
                 streamDuration = 0
+                return
+            }
+            if seconds.isNaN {
+                streamDuration = 0
+            } else {
+                streamDuration = seconds
             }
         }
     }
