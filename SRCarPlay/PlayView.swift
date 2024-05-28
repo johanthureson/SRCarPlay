@@ -119,6 +119,9 @@ struct PlayView: View {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             currentTime = player?.currentTime().seconds ?? 0
             streamDuration = player?.currentItem?.duration.seconds ?? 0
+            if streamDuration.isNaN {
+                streamDuration = 0
+            }
         }
     }
     
