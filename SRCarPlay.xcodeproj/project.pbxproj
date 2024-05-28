@@ -46,6 +46,7 @@
 		4DE4C60B2C05BA88001260B5 /* SRCarPlayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SRCarPlayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE4C60F2C05BA88001260B5 /* SRCarPlayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRCarPlayUITests.swift; sourceTree = "<group>"; };
 		4DE4C6112C05BA88001260B5 /* SRCarPlayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRCarPlayUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4DE4C61E2C05BBC9001260B5 /* SRCarPlay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SRCarPlay.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +97,7 @@
 		4DE4C5F12C05BA87001260B5 /* SRCarPlay */ = {
 			isa = PBXGroup;
 			children = (
+				4DE4C61E2C05BBC9001260B5 /* SRCarPlay.entitlements */,
 				4DE4C5F22C05BA87001260B5 /* SRCarPlayApp.swift */,
 				4DE4C5F42C05BA87001260B5 /* ContentView.swift */,
 				4DE4C5F62C05BA87001260B5 /* Item.swift */,
@@ -423,6 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SRCarPlay/SRCarPlay.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SRCarPlay/Preview Content\"";
@@ -453,6 +456,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SRCarPlay/SRCarPlay.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SRCarPlay/Preview Content\"";
