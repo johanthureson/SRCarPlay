@@ -25,7 +25,7 @@
 		4D37CC652BBB1CEF00F48519 /* Broadcasttime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37CC5D2BBB1CEF00F48519 /* Broadcasttime.swift */; };
 		4D37CC672BBB204C00F48519 /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37CC662BBB204C00F48519 /* PlayView.swift */; };
 		4DE4C5A72C04D7B9001260B5 /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4C5A62C04D7B9001260B5 /* CarPlaySceneDelegate.swift */; };
-		4DE4C5AB2C05B1BF001260B5 /* CarPlayHelloWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4C5AA2C05B1BF001260B5 /* CarPlayHelloWorld.swift */; };
+		4DE4C5A92C04D809001260B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4C5A82C04D809001260B5 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +69,7 @@
 		4DE4C5A22C04CF1D001260B5 /* SRCarPlay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SRCarPlay.entitlements; sourceTree = "<group>"; };
 		4DE4C5A42C04CFEA001260B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DE4C5A62C04D7B9001260B5 /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
-		4DE4C5AA2C05B1BF001260B5 /* CarPlayHelloWorld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayHelloWorld.swift; sourceTree = "<group>"; };
+		4DE4C5A82C04D809001260B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +123,7 @@
 				4DE4C5A22C04CF1D001260B5 /* SRCarPlay.entitlements */,
 				4D37CC282BBB1B6400F48519 /* SRCarPlayApp.swift */,
 				4DE4C5A62C04D7B9001260B5 /* CarPlaySceneDelegate.swift */,
-				4DE4C5AA2C05B1BF001260B5 /* CarPlayHelloWorld.swift */,
+				4DE4C5A82C04D809001260B5 /* AppDelegate.swift */,
 				4D37CC2A2BBB1B6400F48519 /* ContentView.swift */,
 				4D37CC522BBB1BB500F48519 /* NewsView.swift */,
 				4D37CC662BBB204C00F48519 /* PlayView.swift */,
@@ -325,6 +325,7 @@
 				4D37CC632BBB1CEF00F48519 /* Downloadpodfile.swift in Sources */,
 				4D37CC642BBB1CEF00F48519 /* Episodes.swift in Sources */,
 				4D37CC532BBB1BB500F48519 /* NewsView.swift in Sources */,
+				4DE4C5A92C04D809001260B5 /* AppDelegate.swift in Sources */,
 				4D37CC5E2BBB1CEF00F48519 /* Broadcastfiles.swift in Sources */,
 				4D37CC652BBB1CEF00F48519 /* Broadcasttime.swift in Sources */,
 				4D37CC602BBB1CEF00F48519 /* Program.swift in Sources */,
@@ -334,7 +335,6 @@
 				4D37CC622BBB1CEF00F48519 /* Broadcast.swift in Sources */,
 				4D37CC5F2BBB1CEF00F48519 /* News.swift in Sources */,
 				4D37CC292BBB1B6400F48519 /* SRCarPlayApp.swift in Sources */,
-				4DE4C5AB2C05B1BF001260B5 /* CarPlayHelloWorld.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,7 +423,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -480,7 +480,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -502,7 +502,7 @@
 				DEVELOPMENT_TEAM = Y8NX76ELDN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -532,7 +532,7 @@
 				DEVELOPMENT_TEAM = Y8NX76ELDN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
