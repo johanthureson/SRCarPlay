@@ -4,6 +4,11 @@
 //
 
 import CarPlay
+import AVFoundation
+import MediaPlayer
+
+// Add a player property to your class
+var player: AVPlayer?
 
 class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     var interfaceController: CPInterfaceController?
@@ -19,15 +24,40 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         self.interfaceController = nil
     }
 
-    private func showEpisodeDetail(_ episode: Episodes) {
-        let listItem = CPListItem(text: episode.title, detailText: episode.description)
-        let section = CPListSection(items: [listItem])
-        let detailTemplate = CPListTemplate(title: episode.title, sections: [section])
-        interfaceController?.pushTemplate(detailTemplate, animated: true, completion: { _, _ in
-            print("Episode detail template pushed")
-        })
-    }
 
+    private func showEpisodeDetail(_ episodes: Episodes) {
+        guard let urlString = episodes.broadcast?.broadcastfiles?.first?.url,
+              let audioURL = URL(string: urlString) else { return }
+
+        // Assuming that episode has a property 'audioURL' that contains the URL of the audio file
+//        guard let episodeUrl = episode.url, let audioURL = URL(string: episodeUrl) else {
+//            print("Invalid audio URL")
+//            return
+//        }
+        
+        // Create an AVPlayer instance with the audio URL
+        player = AVPlayer(url: audioURL)
+        
+        // Create a Now Playing Template
+        let nowPlayingTemplate = CPNowPlayingTemplate.shared
+        
+        // Set the Now Playing Info
+        let nowPlayingInfo = [String: Any]()
+//        nowPlayingInfo[MPMediaItemPropertyTitle] = episode.title
+//        nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = episode.description
+        // Assuming that episode has a property 'artworkURL' that contains the URL of the artwork image
+        // if let artworkURL = URL(string: episode.artworkURL), let artworkData = try? Data(contentsOf: artworkURL), let artworkImage = UIImage(data: artworkData) {
+        //     nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: artworkImage.size) { _ in artworkImage }
+        // }
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+        
+        // Push the Now Playing Template to the interface controller
+        interfaceController?.pushTemplate(nowPlayingTemplate, animated: true)
+        
+        // Start playing the audio
+        player?.play()
+    }
+    
     private func loadNews() {
         guard let url = URL(string: "https://api.sr.se/api/v2/news/episodes?format=json") else {
             print("Invalid URL")

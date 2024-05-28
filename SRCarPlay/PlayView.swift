@@ -110,9 +110,9 @@ struct PlayView: View {
     
     private func play() {
         guard let urlString = episodes.broadcast?.broadcastfiles?.first?.url,
-              let url = URL(string: urlString) else { return }
+              let audioURL = URL(string: urlString) else { return }
         
-        player = AVPlayer(url: url)
+        player = AVPlayer(url: audioURL)
         player?.play()
         isPlaying = true
         
