@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4DE4C5F32C05BA87001260B5 /* SRCarPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4C5F22C05BA87001260B5 /* SRCarPlayApp.swift */; };
 		4DE4C5F52C05BA87001260B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4C5F42C05BA87001260B5 /* ContentView.swift */; };
-		4DE4C5F72C05BA87001260B5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4C5F62C05BA87001260B5 /* Item.swift */; };
 		4DE4C5F92C05BA88001260B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE4C5F82C05BA88001260B5 /* Assets.xcassets */; };
 		4DE4C5FC2C05BA88001260B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE4C5FB2C05BA88001260B5 /* Preview Assets.xcassets */; };
 		4DE4C6062C05BA88001260B5 /* SRCarPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4C6052C05BA88001260B5 /* SRCarPlayTests.swift */; };
@@ -38,7 +37,6 @@
 		4DE4C5EF2C05BA87001260B5 /* SRCarPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SRCarPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE4C5F22C05BA87001260B5 /* SRCarPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRCarPlayApp.swift; sourceTree = "<group>"; };
 		4DE4C5F42C05BA87001260B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		4DE4C5F62C05BA87001260B5 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		4DE4C5F82C05BA88001260B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DE4C5FB2C05BA88001260B5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4DE4C6012C05BA88001260B5 /* SRCarPlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SRCarPlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,7 +98,6 @@
 				4DE4C61E2C05BBC9001260B5 /* SRCarPlay.entitlements */,
 				4DE4C5F22C05BA87001260B5 /* SRCarPlayApp.swift */,
 				4DE4C5F42C05BA87001260B5 /* ContentView.swift */,
-				4DE4C5F62C05BA87001260B5 /* Item.swift */,
 				4DE4C5F82C05BA88001260B5 /* Assets.xcassets */,
 				4DE4C5FA2C05BA88001260B5 /* Preview Content */,
 			);
@@ -263,7 +260,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DE4C5F52C05BA87001260B5 /* ContentView.swift in Sources */,
-				4DE4C5F72C05BA87001260B5 /* Item.swift in Sources */,
 				4DE4C5F32C05BA87001260B5 /* SRCarPlayApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
