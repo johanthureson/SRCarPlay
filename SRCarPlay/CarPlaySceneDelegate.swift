@@ -26,8 +26,10 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
 
 
     private func showEpisodeDetail(_ episodes: Episodes) {
-        guard let urlString = episodes.broadcast?.broadcastfiles?.first?.url,
-              let audioURL = URL(string: urlString) else { return }
+        let urlString = episodes.broadcast?.broadcastfiles?.first?.url ?? episodes.url
+        guard let urlString, let audioURL = URL(string: urlString) else {
+            return
+        }
 
         // Assuming that episode has a property 'audioURL' that contains the URL of the audio file
 //        guard let episodeUrl = episode.url, let audioURL = URL(string: episodeUrl) else {
