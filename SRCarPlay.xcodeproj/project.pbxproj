@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB17CA3B2A12F59F004E4375 /* CPHelloWorldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17CA3A2A12F59F004E4375 /* CPHelloWorldApp.swift */; };
+		BB17CA3B2A12F59F004E4375 /* SRCarPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17CA3A2A12F59F004E4375 /* SRCarPlayApp.swift */; };
 		BB17CA3D2A12F59F004E4375 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17CA3C2A12F59F004E4375 /* ContentView.swift */; };
 		BB17CA3F2A12F5A2004E4375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB17CA3E2A12F5A2004E4375 /* Assets.xcassets */; };
 		BB17CA422A12F5A2004E4375 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB17CA412A12F5A2004E4375 /* Preview Assets.xcassets */; };
@@ -18,7 +18,7 @@
 
 /* Begin PBXFileReference section */
 		BB17CA372A12F59F004E4375 /* CPHelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPHelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB17CA3A2A12F59F004E4375 /* CPHelloWorldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPHelloWorldApp.swift; sourceTree = "<group>"; };
+		BB17CA3A2A12F59F004E4375 /* SRCarPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRCarPlayApp.swift; sourceTree = "<group>"; };
 		BB17CA3C2A12F59F004E4375 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BB17CA3E2A12F5A2004E4375 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB17CA412A12F5A2004E4375 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				BB17CA4E2A12F958004E4375 /* Info.plist */,
-				BB17CA3A2A12F59F004E4375 /* CPHelloWorldApp.swift */,
+				BB17CA3A2A12F59F004E4375 /* SRCarPlayApp.swift */,
 				BB17CA4A2A12F61C004E4375 /* CarPlaySceneDelegate.swift */,
 				BB17CA4F2A12FBF1004E4375 /* entitlements.plist */,
 				BB17CA4C2A12F6CF004E4375 /* SRCarPlayHelloWorld.swift */,
@@ -152,7 +152,7 @@
 				BB17CA3D2A12F59F004E4375 /* ContentView.swift in Sources */,
 				BB17CA4B2A12F61C004E4375 /* CarPlaySceneDelegate.swift in Sources */,
 				BB17CA4D2A12F6CF004E4375 /* SRCarPlayHelloWorld.swift in Sources */,
-				BB17CA3B2A12F59F004E4375 /* CPHelloWorldApp.swift in Sources */,
+				BB17CA3B2A12F59F004E4375 /* SRCarPlayApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
