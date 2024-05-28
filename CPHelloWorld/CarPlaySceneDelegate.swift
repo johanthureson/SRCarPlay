@@ -3,7 +3,6 @@
 //  SRCarPlay
 //
 
-import Foundation
 import CarPlay
 
 class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
@@ -14,7 +13,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         
         self.interfaceController = interfaceController
         
-        self.interfaceController?.setRootTemplate(SRCarPlayHelloWorld().template, animated: false, completion: nil)
+        self.interfaceController?.setRootTemplate(SRCarPlayTemlate().template, animated: false, completion: nil)
     }
     
     func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene, didDisconnectInterfaceController interfaceController: CPInterfaceController) {

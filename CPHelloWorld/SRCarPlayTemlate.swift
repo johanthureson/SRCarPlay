@@ -1,12 +1,12 @@
 //
-//  SRCarPlayHelloWorld.swift
+//  SRCarPlayTemlate.swift
 //  SRCarPlay
 //
 
-import Foundation
 import CarPlay
 
-class SRCarPlayHelloWorld {
+class SRCarPlayTemlate {
+    
     var template: CPListTemplate {
         return CPListTemplate(title: "Hello world", sections: [self.section])
     }

@@ -12,18 +12,18 @@
 		BB17CA3F2A12F5A2004E4375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB17CA3E2A12F5A2004E4375 /* Assets.xcassets */; };
 		BB17CA422A12F5A2004E4375 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB17CA412A12F5A2004E4375 /* Preview Assets.xcassets */; };
 		BB17CA4B2A12F61C004E4375 /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17CA4A2A12F61C004E4375 /* CarPlaySceneDelegate.swift */; };
-		BB17CA4D2A12F6CF004E4375 /* SRCarPlayHelloWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17CA4C2A12F6CF004E4375 /* SRCarPlayHelloWorld.swift */; };
+		BB17CA4D2A12F6CF004E4375 /* SRCarPlayTemlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17CA4C2A12F6CF004E4375 /* SRCarPlayTemlate.swift */; };
 		BB17CA502A12FBF1004E4375 /* entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB17CA4F2A12FBF1004E4375 /* entitlements.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BB17CA372A12F59F004E4375 /* CPHelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPHelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB17CA372A12F59F004E4375 /* SRCarPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SRCarPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB17CA3A2A12F59F004E4375 /* SRCarPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRCarPlayApp.swift; sourceTree = "<group>"; };
 		BB17CA3C2A12F59F004E4375 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BB17CA3E2A12F5A2004E4375 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB17CA412A12F5A2004E4375 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BB17CA4A2A12F61C004E4375 /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
-		BB17CA4C2A12F6CF004E4375 /* SRCarPlayHelloWorld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRCarPlayHelloWorld.swift; sourceTree = "<group>"; };
+		BB17CA4C2A12F6CF004E4375 /* SRCarPlayTemlate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRCarPlayTemlate.swift; sourceTree = "<group>"; };
 		BB17CA4E2A12F958004E4375 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BB17CA4F2A12FBF1004E4375 /* entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -50,7 +50,7 @@
 		BB17CA382A12F59F004E4375 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BB17CA372A12F59F004E4375 /* CPHelloWorld.app */,
+				BB17CA372A12F59F004E4375 /* SRCarPlay.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,7 +62,7 @@
 				BB17CA3A2A12F59F004E4375 /* SRCarPlayApp.swift */,
 				BB17CA4A2A12F61C004E4375 /* CarPlaySceneDelegate.swift */,
 				BB17CA4F2A12FBF1004E4375 /* entitlements.plist */,
-				BB17CA4C2A12F6CF004E4375 /* SRCarPlayHelloWorld.swift */,
+				BB17CA4C2A12F6CF004E4375 /* SRCarPlayTemlate.swift */,
 				BB17CA3C2A12F59F004E4375 /* ContentView.swift */,
 				BB17CA3E2A12F5A2004E4375 /* Assets.xcassets */,
 				BB17CA402A12F5A2004E4375 /* Preview Content */,
@@ -81,9 +81,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BB17CA362A12F59F004E4375 /* CPHelloWorld */ = {
+		BB17CA362A12F59F004E4375 /* SRCarPlay */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BB17CA452A12F5A2004E4375 /* Build configuration list for PBXNativeTarget "CPHelloWorld" */;
+			buildConfigurationList = BB17CA452A12F5A2004E4375 /* Build configuration list for PBXNativeTarget "SRCarPlay" */;
 			buildPhases = (
 				BB17CA332A12F59F004E4375 /* Sources */,
 				BB17CA342A12F59F004E4375 /* Frameworks */,
@@ -93,9 +93,9 @@
 			);
 			dependencies = (
 			);
-			name = CPHelloWorld;
+			name = SRCarPlay;
 			productName = CPHelloWorld;
-			productReference = BB17CA372A12F59F004E4375 /* CPHelloWorld.app */;
+			productReference = BB17CA372A12F59F004E4375 /* SRCarPlay.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -126,7 +126,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BB17CA362A12F59F004E4375 /* CPHelloWorld */,
+				BB17CA362A12F59F004E4375 /* SRCarPlay */,
 			);
 		};
 /* End PBXProject section */
@@ -151,7 +151,7 @@
 			files = (
 				BB17CA3D2A12F59F004E4375 /* ContentView.swift in Sources */,
 				BB17CA4B2A12F61C004E4375 /* CarPlaySceneDelegate.swift in Sources */,
-				BB17CA4D2A12F6CF004E4375 /* SRCarPlayHelloWorld.swift in Sources */,
+				BB17CA4D2A12F6CF004E4375 /* SRCarPlayTemlate.swift in Sources */,
 				BB17CA3B2A12F59F004E4375 /* SRCarPlayApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +288,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CPHelloWorld/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SRCarPlay;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -319,6 +320,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CPHelloWorld/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SRCarPlay;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -349,7 +351,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BB17CA452A12F5A2004E4375 /* Build configuration list for PBXNativeTarget "CPHelloWorld" */ = {
+		BB17CA452A12F5A2004E4375 /* Build configuration list for PBXNativeTarget "SRCarPlay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BB17CA462A12F5A2004E4375 /* Debug */,
