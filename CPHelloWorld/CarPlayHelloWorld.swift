@@ -1,8 +1,8 @@
 //
-//  CarPlayHelloWorld.swift
-//  SRCarPlay
+//  CarPlayHelloWorldTemplate.swift
+//  CPHelloWorld
 //
-//  Created by Johan Thureson on 2024-05-28.
+//  Created by Paul Wilkinson on 16/5/2023.
 //
 
 import Foundation

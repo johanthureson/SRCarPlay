@@ -1,14 +1,13 @@
 //
 //  ContentView.swift
-//  SRCarPlay
+//  CPHelloWorld
 //
-//  Created by Johan Thureson on 2024-05-28.
+//  Created by Paul Wilkinson on 16/5/2023.
 //
 
 import SwiftUI
 
 struct ContentView: View {
-
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -18,9 +17,10 @@ struct ContentView: View {
         }
         .padding()
     }
-
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }

@@ -1,8 +1,8 @@
 //
 //  CarPlaySceneDelegate.swift
-//  SRCarPlay
+//  CPHelloWorld
 //
-//  Created by Johan Thureson on 2024-05-28.
+//  Created by Paul Wilkinson on 16/5/2023.
 //
 
 import Foundation
@@ -22,4 +22,5 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene, didDisconnectInterfaceController interfaceController: CPInterfaceController) {
         self.interfaceController = nil
     }
+    
 }
