@@ -42,7 +42,7 @@
 		BB17CA2E2A12F59F004E4375 = {
 			isa = PBXGroup;
 			children = (
-				BB17CA392A12F59F004E4375 /* CPHelloWorld */,
+				BB17CA392A12F59F004E4375 /* SRCarPlay */,
 				BB17CA382A12F59F004E4375 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,7 +55,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BB17CA392A12F59F004E4375 /* CPHelloWorld */ = {
+		BB17CA392A12F59F004E4375 /* SRCarPlay */ = {
 			isa = PBXGroup;
 			children = (
 				BB17CA4E2A12F958004E4375 /* Info.plist */,
@@ -67,7 +67,7 @@
 				BB17CA3E2A12F5A2004E4375 /* Assets.xcassets */,
 				BB17CA402A12F5A2004E4375 /* Preview Content */,
 			);
-			path = CPHelloWorld;
+			path = SRCarPlay;
 			sourceTree = "<group>";
 		};
 		BB17CA402A12F5A2004E4375 /* Preview Content */ = {
@@ -280,14 +280,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SRCarPlay/entitlements.plist;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CPHelloWorld/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SRCarPlay/Preview Content\"";
 				DEVELOPMENT_TEAM = Y8NX76ELDN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CPHelloWorld/Info.plist;
+				INFOPLIST_FILE = SRCarPlay/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SRCarPlay;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -312,14 +313,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SRCarPlay/entitlements.plist;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CPHelloWorld/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SRCarPlay/Preview Content\"";
 				DEVELOPMENT_TEAM = Y8NX76ELDN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CPHelloWorld/Info.plist;
+				INFOPLIST_FILE = SRCarPlay/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SRCarPlay;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
