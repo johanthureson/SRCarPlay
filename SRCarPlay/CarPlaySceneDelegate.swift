@@ -20,14 +20,43 @@ class CarPlaySceneDelegate: UIResponder, UIWindowSceneDelegate, CPTemplateApplic
     func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene, didConnect interfaceController: CPInterfaceController) {
         self.interfaceController = interfaceController
 
-        let item = CPListItem(text: "Hello", detailText: "World")
-        let listTemplate = CPListTemplate(title: "Hello World", sections: [CPListSection(items: [item])])
-
-        interfaceController.setRootTemplate(listTemplate, animated: true)
+        // Set up the initial template
+        setupInitialTemplate()
     }
 
-    func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene, didDisconnect interfaceController: CPInterfaceController) {
+    private func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene, didDisconnect interfaceController: CPInterfaceController) {
         self.interfaceController = nil
     }
-}
 
+    private func setupInitialTemplate() {
+        let item1 = CPListItem(text: "Hello", detailText: "World")
+        let item2 = CPListItem(text: "Swift", detailText: "UI")
+
+        item1.handler = { [weak self] item, completion in
+            self?.showDetailTemplate(title: item1.text, detail: item1.detailText)
+            completion()
+        }
+
+        item2.handler = { [weak self] item, completion in
+            self?.showDetailTemplate(title: item2.text, detail: item2.detailText)
+            completion()
+        }
+
+        let listSection = CPListSection(items: [item1, item2])
+        let listTemplate = CPListTemplate(title: "My CarPlay App", sections: [listSection])
+
+        interfaceController?.setRootTemplate(listTemplate, animated: true, completion: { _, _ in
+            print("Root template set")
+        })
+    }
+
+    private func showDetailTemplate(title: String?, detail: String?) {
+        let item = CPListItem(text: title ?? "", detailText: detail ?? "")
+        let section = CPListSection(items: [item])
+        let listTemplate = CPListTemplate(title: title ?? "", sections: [section])
+
+        interfaceController?.pushTemplate(listTemplate, animated: true, completion: { _, _ in
+            print("Detail template pushed")
+        })
+    }
+}
