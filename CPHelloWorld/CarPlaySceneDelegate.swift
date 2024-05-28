@@ -1,6 +1,6 @@
 //
 //  CarPlaySceneDelegate.swift
-//  CPHelloWorld
+//  SRCarPlay
 //
 //  Created by Paul Wilkinson on 16/5/2023.
 //
@@ -16,7 +16,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         
         self.interfaceController = interfaceController
         
-        self.interfaceController?.setRootTemplate(CarPlayHelloWorld().template, animated: false, completion: nil)
+        self.interfaceController?.setRootTemplate(SRCarPlayHelloWorld().template, animated: false, completion: nil)
     }
     
     func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene, didDisconnectInterfaceController interfaceController: CPInterfaceController) {

@@ -1,6 +1,6 @@
 //
-//  CarPlayHelloWorldTemplate.swift
-//  CPHelloWorld
+//  SRCarPlayHelloWorld.swift
+//  SRCarPlay
 //
 //  Created by Paul Wilkinson on 16/5/2023.
 //
@@ -8,7 +8,7 @@
 import Foundation
 import CarPlay
 
-class CarPlayHelloWorld {
+class SRCarPlayHelloWorld {
     var template: CPListTemplate {
         return CPListTemplate(title: "Hello world", sections: [self.section])
     }

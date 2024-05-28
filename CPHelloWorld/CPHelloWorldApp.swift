@@ -1,6 +1,6 @@
 //
-//  CPHelloWorldApp.swift
-//  CPHelloWorld
+//  SRCarPlayApp.swift
+//  SRCarPlay
 //
 //  Created by Paul Wilkinson on 16/5/2023.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct CPHelloWorldApp: App {
+struct SRCarPlayApp: App {
     
 
     
