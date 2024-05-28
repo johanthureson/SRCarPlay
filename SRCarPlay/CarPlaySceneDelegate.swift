@@ -70,8 +70,11 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
                 if let decodedResponse = try? JSONDecoder().decode(News.self, from: data) {
+                    var tmpEpisodes = decodedResponse.episodes ?? [Episodes]()
+                    // Filter out episodes where audiopreference is equal to "pod"
+                    tmpEpisodes = tmpEpisodes.filter { $0.audiopreference != "pod" }
                     DispatchQueue.main.async {
-                        self.newsEpisodes = decodedResponse.episodes ?? [Episodes]()
+                        self.newsEpisodes = tmpEpisodes
                         self.setupInitialTemplate()
                     }
                     return
