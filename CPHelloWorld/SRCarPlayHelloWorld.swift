@@ -2,8 +2,6 @@
 //  SRCarPlayHelloWorld.swift
 //  SRCarPlay
 //
-//  Created by Paul Wilkinson on 16/5/2023.
-//
 
 import Foundation
 import CarPlay
