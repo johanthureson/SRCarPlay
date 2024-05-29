@@ -164,7 +164,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     
     private func createNyheterTemplate() -> CPTemplate {
         let listItems = newsEpisodes.map { episode -> CPListItem in
-            let listItem = CPListItem(text: episode.title, detailText: nil) // image episodes.imageurl
+            let listItem = CPListItem(text: episode.title, detailText: nil)
             if let imageUrl = episode.imageurl, let url = URL(string: imageUrl) {
                 let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
                     guard let data = data, let image = UIImage(data: data) else {
