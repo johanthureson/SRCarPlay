@@ -142,12 +142,12 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     }
     
     private func setupInitialTemplate() {
-        let poddarTemplate = createPoddarTemplate()
         let nyheterTemplate = createNyheterTemplate()
         let kanalerTemplate = createKanalerTemplate()
+        let poddarTemplate = createPoddarTemplate()
         let minSidaTemplate = createMinSidaTemplate()
         
-        let tabBarTemplate = CPTabBarTemplate(templates: [poddarTemplate, nyheterTemplate, kanalerTemplate, minSidaTemplate])
+        let tabBarTemplate = CPTabBarTemplate(templates: [nyheterTemplate, kanalerTemplate, poddarTemplate, minSidaTemplate])
         
         interfaceController?.setRootTemplate(tabBarTemplate, animated: true, completion: { _, _ in
             print("Root template set")
