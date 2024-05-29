@@ -106,13 +106,13 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
             player?.pause()
             return .success
         }
-        MPRemoteCommandCenter.shared().skipForwardCommand.addTarget { event in
-            let cmTime = CMTime(seconds: (player?.currentTime().seconds ?? 0) + self.secondsForward, preferredTimescale: 1)
+        MPRemoteCommandCenter.shared().skipBackwardCommand.addTarget { event in
+            let cmTime = CMTime(seconds: (player?.currentTime().seconds ?? 0) - self.secondsBackward, preferredTimescale: 1)
             player?.seek(to: cmTime)
             return .success
         }
-        MPRemoteCommandCenter.shared().skipBackwardCommand.addTarget { event in
-            let cmTime = CMTime(seconds: (player?.currentTime().seconds ?? 0) - self.secondsBackward, preferredTimescale: 1)
+        MPRemoteCommandCenter.shared().skipForwardCommand.addTarget { event in
+            let cmTime = CMTime(seconds: (player?.currentTime().seconds ?? 0) + self.secondsForward, preferredTimescale: 1)
             player?.seek(to: cmTime)
             return .success
         }
