@@ -16,6 +16,8 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     
     private let secondsBackward: Double = 10
     private let secondsForward: Double = 10
+    private var durationIsSet = false
+    private var timeObserver: Any?
     
     func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene, didConnect interfaceController: CPInterfaceController) {
         self.interfaceController = interfaceController
@@ -28,12 +30,16 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     }
     
     private func showEpisodeDetail(_ episodes: Episodes) {
+        durationIsSet = false
         let urlString = episodes.broadcast?.broadcastfiles?.first?.url ?? episodes.url
         guard let urlString, let audioURL = URL(string: urlString) else {
             return
         }
         
         // Create an AVPlayer instance with the audio URL
+        if let timeObserver {
+            player?.removeTimeObserver(timeObserver)
+        }
         player = AVPlayer(url: audioURL)
         
         setupNowPlayingInfoCenter()
@@ -55,6 +61,26 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
                 }
             }
             task.resume()
+        }
+        
+        // Update the Now Playing Info when the player's current time changes
+        timeObserver = player?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: CMTimeScale(NSEC_PER_SEC)), queue: .main) { [weak self] time in
+            guard let self else { return }
+            
+            // This is to avoid that the time goes beyond the duration, and thus causing a jump in the timeline
+            if let durationInSeconds = player?.currentItem?.duration.seconds {
+                if !durationInSeconds.isNaN && time.seconds <= durationInSeconds {
+                    nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = time.seconds
+                }
+            }
+            
+            MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+            if !self.durationIsSet {
+                if !(player?.currentItem?.duration.seconds.isNaN ?? true) {
+                    self.durationIsSet = true
+                    nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = player?.currentItem?.duration.seconds
+                }
+            }
         }
         
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
