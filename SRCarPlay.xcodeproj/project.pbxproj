@@ -22,7 +22,6 @@
 		BB17CA3F2A12F5A2004E4375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB17CA3E2A12F5A2004E4375 /* Assets.xcassets */; };
 		BB17CA422A12F5A2004E4375 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB17CA412A12F5A2004E4375 /* Preview Assets.xcassets */; };
 		BB17CA4B2A12F61C004E4375 /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17CA4A2A12F61C004E4375 /* CarPlaySceneDelegate.swift */; };
-		BB17CA4D2A12F6CF004E4375 /* SRCarPlayTemlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17CA4C2A12F6CF004E4375 /* SRCarPlayTemlate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +41,6 @@
 		BB17CA3E2A12F5A2004E4375 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB17CA412A12F5A2004E4375 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BB17CA4A2A12F61C004E4375 /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
-		BB17CA4C2A12F6CF004E4375 /* SRCarPlayTemlate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRCarPlayTemlate.swift; sourceTree = "<group>"; };
 		BB17CA4E2A12F958004E4375 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BB17CA4F2A12FBF1004E4375 /* entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,7 +102,6 @@
 				BB17CA3A2A12F59F004E4375 /* SRCarPlayApp.swift */,
 				BB17CA4A2A12F61C004E4375 /* CarPlaySceneDelegate.swift */,
 				BB17CA4F2A12FBF1004E4375 /* entitlements.plist */,
-				BB17CA4C2A12F6CF004E4375 /* SRCarPlayTemlate.swift */,
 				BB17CA3C2A12F59F004E4375 /* ContentView.swift */,
 				4DB3BCBF2C05E1AD00C3472A /* NewsView.swift */,
 				4DB3BCC12C05E1B600C3472A /* PlayView.swift */,
@@ -200,7 +197,6 @@
 				4DB3BCD42C05E1C400C3472A /* Program.swift in Sources */,
 				4DB3BCD02C05E1C400C3472A /* Downloadpodfile.swift in Sources */,
 				4DB3BCCD2C05E1C400C3472A /* Broadcast.swift in Sources */,
-				BB17CA4D2A12F6CF004E4375 /* SRCarPlayTemlate.swift in Sources */,
 				4DB3BCD22C05E1C400C3472A /* News.swift in Sources */,
 				4DB3BCCE2C05E1C400C3472A /* Broadcastfiles.swift in Sources */,
 				4DB3BCC02C05E1AD00C3472A /* NewsView.swift in Sources */,
