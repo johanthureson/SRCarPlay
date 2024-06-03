@@ -170,7 +170,9 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
                     guard let data = data, let image = UIImage(data: data) else {
                         return
                     }
-                    listItem.setImage(image)
+                    DispatchQueue.main.async {
+                        listItem.setImage(image)
+                    }
                 }
                 task.resume()
             }
