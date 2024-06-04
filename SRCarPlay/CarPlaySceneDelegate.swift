@@ -130,6 +130,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
                     var tmpEpisodes = decodedResponse.episodes ?? [Episodes]()
                     // Filter out episodes where audiopreference is equal to "pod"
                     tmpEpisodes = tmpEpisodes.filter { $0.audiopreference != "pod" }
+                    tmpEpisodes = tmpEpisodes.filter { $0.broadcast?.broadcastfiles?.first?.url != nil }
                     DispatchQueue.main.async {
                         self.newsEpisodes = tmpEpisodes
                         self.setupInitialTemplate()
