@@ -211,9 +211,8 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         let nyheterTemplate = createNyheterTemplate()
         let kanalerTemplate = createKanalerTemplate()
         let poddarTemplate = createPoddarTemplate()
-        let minSidaTemplate = createMinSidaTemplate()
         
-        let tabBarTemplate = CPTabBarTemplate(templates: [nyheterTemplate, kanalerTemplate, poddarTemplate, minSidaTemplate])
+        let tabBarTemplate = CPTabBarTemplate(templates: [nyheterTemplate, kanalerTemplate, poddarTemplate])
         
         interfaceController?.setRootTemplate(tabBarTemplate, animated: true, completion: { _, _ in
             print("Root template set")
@@ -280,11 +279,4 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         return listTemplate
     }
     
-    private func createMinSidaTemplate() -> CPTemplate {
-        let item = CPListItem(text: "Profile 1", detailText: nil)
-        let section = CPListSection(items: [item])
-        let listTemplate = CPListTemplate(title: "Min sida", sections: [section])
-        listTemplate.tabImage = UIImage(systemName: "person.fill")
-        return listTemplate
-    }
 }

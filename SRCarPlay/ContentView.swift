@@ -28,12 +28,6 @@ struct ContentView: View {
                     Text("Kanaler")
                 }
                 .tag(2)
-            Text("Min sida")
-                .tabItem {
-                    Image(systemName: "person.fill")
-                    Text("Min sida")
-                }
-                .tag(3)
         }
     }
 }
