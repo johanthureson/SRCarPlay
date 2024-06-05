@@ -7,7 +7,7 @@ import CarPlay
 import AVFoundation
 import MediaPlayer
 
-let placeholderImage = UIImage(systemName: "photo")
+let placeholderImage = UIImage(systemName: "photo.circle.fill")
 
 // Add a player property to your class
 var player: AVPlayer?
