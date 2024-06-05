@@ -7,6 +7,8 @@ import CarPlay
 import AVFoundation
 import MediaPlayer
 
+let placeholderImage = UIImage(systemName: "photo")
+
 // Add a player property to your class
 var player: AVPlayer?
 
@@ -52,6 +54,9 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         nowPlayingInfo[MPMediaItemPropertyArtist] = episodes.description // Use MPMediaItemPropertyArtist to set the description
         
         // Load the artwork image asynchronously
+        nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: placeholderImage?.size ?? CGSize.zero) { _ in
+            return placeholderImage!
+        }
         if let imageUrl = episodes.imageurl, let artworkURL = URL(string: imageUrl) {
             let task = URLSession.shared.dataTask(with: artworkURL) { (data, response, error) in
                 guard let data = data, let artworkImage = UIImage(data: data) else {
@@ -112,10 +117,13 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         
         // Set the Now Playing Info
         var nowPlayingInfo = [String: Any]()
-        nowPlayingInfo[MPMediaItemPropertyTitle] = channel.name
-        nowPlayingInfo[MPMediaItemPropertyArtist] = channel.tagline
+        nowPlayingInfo[MPMediaItemPropertyTitle] = channel.name ?? ""
+        nowPlayingInfo[MPMediaItemPropertyArtist] = channel.tagline ?? ""
         
         // Load the artwork image asynchronously
+        nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: placeholderImage?.size ?? CGSize.zero) { _ in
+            return placeholderImage!
+        }
         if let imageUrl = channel.image, let artworkURL = URL(string: imageUrl) {
             let task = URLSession.shared.dataTask(with: artworkURL) { (data, response, error) in
                 guard let data = data, let artworkImage = UIImage(data: data) else {
@@ -220,7 +228,8 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     
     private func createNyheterTemplate() -> CPTemplate {
         let listItems = newsEpisodes.map { episode -> CPListItem in
-            let listItem = CPListItem(text: episode.title, detailText: nil)
+            let listItem = CPListItem(text: episode.title ?? "", detailText: nil)
+            listItem.setImage(placeholderImage)
             if let imageUrl = episode.imageurl, let url = URL(string: imageUrl) {
                 let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
                     guard let data = data, let image = UIImage(data: data) else {
@@ -246,7 +255,8 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     
     private func createKanalerTemplate() -> CPTemplate {
         let listItems = channels.map { channel -> CPListItem in
-            let listItem = CPListItem(text: channel.name, detailText: channel.tagline)
+            let listItem = CPListItem(text: channel.name ?? "", detailText: channel.tagline ?? "")
+            listItem.setImage(placeholderImage)
             if let imageUrl = channel.image, let url = URL(string: imageUrl) {
                 let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
                     guard let data = data, let image = UIImage(data: data) else {
