@@ -13,6 +13,7 @@ var player: AVPlayer?
 class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     var interfaceController: CPInterfaceController?
     var newsEpisodes: [Episodes] = []
+    var channels: [Channel] = []
     
     private let secondsBackward: Double = 10
     private let secondsForward: Double = 10
@@ -22,6 +23,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene, didConnect interfaceController: CPInterfaceController) {
         self.interfaceController = interfaceController
         loadNews()
+        loadChannels()
         setupInitialTemplate()
     }
     
@@ -141,6 +143,26 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
             print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
         }.resume()
     }
+
+    private func loadChannels() {
+        guard let url = URL(string: "https://api.sr.se/api/v2/channels?format=json") else {
+            print("Invalid URL")
+            return
+        }
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                if let decodedResponse = try? JSONDecoder().decode(ChannelsResponse.self, from: data) {
+                    DispatchQueue.main.async {
+                        self.channels = decodedResponse.channels
+                        self.setupInitialTemplate()
+                    }
+                    return
+                }
+            }
+            print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+        }.resume()
+    }
     
     private func setupInitialTemplate() {
         let nyheterTemplate = createNyheterTemplate()
@@ -190,8 +212,28 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     }
     
     private func createKanalerTemplate() -> CPTemplate {
-        let item = CPListItem(text: "Channel 1", detailText: nil)
-        let section = CPListSection(items: [item])
+        let listItems = channels.map { channel -> CPListItem in
+            let listItem = CPListItem(text: channel.name, detailText: channel.tagline)
+            if let imageUrl = channel.image, let url = URL(string: imageUrl) {
+                let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                    guard let data = data, let image = UIImage(data: data) else {
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        listItem.setImage(image)
+                    }
+                }
+                task.resume()
+            }
+            listItem.handler = { item, completion in
+                // Handle channel selection if needed
+                completion()
+            }
+            return listItem
+        }
+        let section = CPListSection(items: listItems)
+
+
         let listTemplate = CPListTemplate(title: "Kanaler", sections: [section])
         listTemplate.tabImage = UIImage(systemName: "radio.fill")
         return listTemplate

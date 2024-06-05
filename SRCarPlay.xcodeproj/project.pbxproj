@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0439D72C1060F600B79D9E /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0439D62C1060F600B79D9E /* Channel.swift */; };
+		4D0439DB2C10616900B79D9E /* Liveaudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0439DA2C10616800B79D9E /* Liveaudio.swift */; };
 		4DB3BCC02C05E1AD00C3472A /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCBF2C05E1AD00C3472A /* NewsView.swift */; };
 		4DB3BCC22C05E1B600C3472A /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCC12C05E1B600C3472A /* PlayView.swift */; };
 		4DB3BCCD2C05E1C400C3472A /* Broadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCC32C05E1C400C3472A /* Broadcast.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D0439D62C1060F600B79D9E /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		4D0439DA2C10616800B79D9E /* Liveaudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Liveaudio.swift; sourceTree = "<group>"; };
 		4DB3BCBF2C05E1AD00C3472A /* NewsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		4DB3BCC12C05E1B600C3472A /* PlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
 		4DB3BCC32C05E1C400C3472A /* Broadcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broadcast.swift; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 				4DB3BCC52C05E1C400C3472A /* Broadcasttime.swift */,
 				4DB3BCC62C05E1C400C3472A /* Downloadpodfile.swift */,
 				4DB3BCC72C05E1C400C3472A /* Episodes.swift */,
+				4D0439D62C1060F600B79D9E /* Channel.swift */,
+				4D0439DA2C10616800B79D9E /* Liveaudio.swift */,
 				4DB3BCC82C05E1C400C3472A /* News.swift */,
 				4DB3BCC92C05E1C400C3472A /* Playlist.swift */,
 				4DB3BCCA2C05E1C400C3472A /* Program.swift */,
@@ -197,11 +203,13 @@
 				4DB3BCD42C05E1C400C3472A /* Program.swift in Sources */,
 				4DB3BCD02C05E1C400C3472A /* Downloadpodfile.swift in Sources */,
 				4DB3BCCD2C05E1C400C3472A /* Broadcast.swift in Sources */,
+				4D0439D72C1060F600B79D9E /* Channel.swift in Sources */,
 				4DB3BCD22C05E1C400C3472A /* News.swift in Sources */,
 				4DB3BCCE2C05E1C400C3472A /* Broadcastfiles.swift in Sources */,
 				4DB3BCC02C05E1AD00C3472A /* NewsView.swift in Sources */,
 				4DB3BCCF2C05E1C400C3472A /* Broadcasttime.swift in Sources */,
 				4DB3BCD12C05E1C400C3472A /* Episodes.swift in Sources */,
+				4D0439DB2C10616900B79D9E /* Liveaudio.swift in Sources */,
 				BB17CA3B2A12F59F004E4375 /* SRCarPlayApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
