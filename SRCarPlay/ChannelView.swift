@@ -17,9 +17,8 @@ struct ChannelView: View {
             List(viewModel.channels) { channel in
                 NavigationLink(destination: ChannelDetailView(viewModel: viewModel, channel: channel)) {
                     HStack {
-                        if let imageUrl = channel.image, let url = URL(string: imageUrl), let imageData = try? Data(contentsOf: url), let uiImage = UIImage(data: imageData) {
-                            Image(uiImage: uiImage)
-                                .resizable()
+                        if let imageUrl = channel.image, let url = URL(string: imageUrl) {
+                            AsyncImage(url: url)
                                 .frame(width: 50, height: 50)
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
                         }
@@ -48,11 +47,10 @@ struct ChannelDetailView: View {
     
     var body: some View {
         VStack {
-            if let imageUrl = channel.image, let url = URL(string: imageUrl), let imageData = try? Data(contentsOf: url), let uiImage = UIImage(data: imageData) {
-                Image(uiImage: uiImage)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+            if let imageUrl = channel.image, let url = URL(string: imageUrl) {
+                AsyncImage(url: url)
                     .frame(width: 200, height: 200)
+                    .aspectRatio(contentMode: .fit)
             }
             Text(channel.name ?? "")
                 .font(.largeTitle)
@@ -88,6 +86,55 @@ struct ChannelDetailView: View {
         .onAppear {
             viewModel.playChannel(channel)
         }
+    }
+}
+
+struct AsyncImage: View {
+    @StateObject private var loader: ImageLoader
+    var placeholder: Image
+
+    init(url: URL, placeholder: Image = Image(systemName: "photo")) {
+        _loader = StateObject(wrappedValue: ImageLoader(url: url))
+        self.placeholder = placeholder
+    }
+
+    var body: some View {
+        content
+            .onAppear(perform: loader.load)
+    }
+
+    private var content: some View {
+        Group {
+            if let uiImage = loader.image {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            } else {
+                placeholder
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
+        }
+    }
+}
+
+class ImageLoader: ObservableObject {
+    @Published var image: UIImage?
+    private let url: URL
+
+    init(url: URL) {
+        self.url = url
+    }
+
+    func load() {
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data, let uiImage = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self.image = uiImage
+                }
+            }
+        }
+        task.resume()
     }
 }
 
@@ -155,12 +202,21 @@ class ChannelViewModel: ObservableObject {
     
     private func setupNowPlayingInfoCenter(channel: Channel) {
         var nowPlayingInfo = [String: Any]()
-        nowPlayingInfo[MPMediaItemPropertyTitle] = channel.name
-        nowPlayingInfo[MPMediaItemPropertyArtist] = channel.tagline
-        if let imageUrl = channel.image, let url = URL(string: imageUrl), let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
-            nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: image.size) { _ in image }
+        nowPlayingInfo[MPMediaItemPropertyTitle] = channel.name ?? ""
+        nowPlayingInfo[MPMediaItemPropertyArtist] = channel.tagline ?? ""
+        if let imageUrl = channel.image, let url = URL(string: imageUrl) {
+            let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: image.size) { _ in image }
+                        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+                    }
+                }
+            }
+            task.resume()
+        } else {
+            MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
         }
-        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
         
         UIApplication.shared.beginReceivingRemoteControlEvents()
         MPRemoteCommandCenter.shared().playCommand.addTarget { event in
