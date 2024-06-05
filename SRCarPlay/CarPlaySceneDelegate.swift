@@ -240,7 +240,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         }
         let section = CPListSection(items: listItems)
         let listTemplate = CPListTemplate(title: "Nyheter", sections: [section])
-        listTemplate.tabImage = UIImage(systemName: "doc.text")
+        listTemplate.tabImage = UIImage(systemName: "doc.text.fill")
         return listTemplate
     }
     

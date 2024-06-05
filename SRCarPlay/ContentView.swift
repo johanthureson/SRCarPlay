@@ -12,7 +12,7 @@ struct ContentView: View {
         TabView(selection: $selectedTab) {
             NewsView()
                 .tabItem {
-                    Image(systemName: "doc.text")
+                    Image(systemName: "doc.text.fill")
                     Text("Nyheter")
                 }
                 .tag(0)
