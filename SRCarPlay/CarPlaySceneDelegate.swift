@@ -210,21 +210,12 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     private func setupInitialTemplate() {
         let nyheterTemplate = createNyheterTemplate()
         let kanalerTemplate = createKanalerTemplate()
-        let poddarTemplate = createPoddarTemplate()
         
-        let tabBarTemplate = CPTabBarTemplate(templates: [nyheterTemplate, kanalerTemplate, poddarTemplate])
+        let tabBarTemplate = CPTabBarTemplate(templates: [nyheterTemplate, kanalerTemplate])
         
         interfaceController?.setRootTemplate(tabBarTemplate, animated: true, completion: { _, _ in
             print("Root template set")
         })
-    }
-    
-    private func createPoddarTemplate() -> CPTemplate {
-        let item = CPListItem(text: "Podcast 1", detailText: nil)
-        let section = CPListSection(items: [item])
-        let listTemplate = CPListTemplate(title: "Poddar", sections: [section])
-        listTemplate.tabImage = UIImage(systemName: "headphones")
-        return listTemplate
     }
     
     private func createNyheterTemplate() -> CPTemplate {

@@ -10,24 +10,18 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            Text("Poddar")
-                .tabItem {
-                    Image(systemName: "headphones")
-                    Text("Poddar")
-                }
-                .tag(0)
             NewsView()
                 .tabItem {
                     Image(systemName: "doc.text")
                     Text("Nyheter")
                 }
-                .tag(1)
+                .tag(0)
             Text("Kanaler")
                 .tabItem {
                     Image(systemName: "radio.fill")
                     Text("Kanaler")
                 }
-                .tag(2)
+                .tag(1)
         }
     }
 }
