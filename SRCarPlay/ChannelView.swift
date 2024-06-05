@@ -31,6 +31,7 @@ struct ChannelView: View {
                             Text(channel.tagline ?? "")
                                 .font(.subheadline)
                                 .foregroundColor(.gray)
+                                .lineLimit(2)
                         }
                     }
                 }
