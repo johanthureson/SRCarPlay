@@ -17,6 +17,7 @@ struct NewsView: View {
             List(news.episodes ?? []) { episode in
                 NavigationLink(destination: PlayView(episodes: episode)) {
                     Text(episode.title ?? "")
+                        .frame(height: 44)
                 }
             }
             .onAppear(perform: loadNews)
