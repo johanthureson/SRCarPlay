@@ -20,8 +20,10 @@ struct NewsView: View {
                                 .frame(width: 50, height: 50)
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
                         }
+                        Spacer()
+                            .frame(width: 16)
                         Text(episode.title ?? "")
-                            .frame(height: 44)
+                            .frame(height: 32)
                     }
                 }
             }
