@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct NewsView: View {
-    
     @State private var news = News(episodes: [])
 
     var body: some View {
-        
         NavigationView {
             List(news.episodes ?? []) { episode in
                 NavigationLink(destination: PlayView(episodes: episode)) {
-                    Text(episode.title ?? "")
-                        .frame(height: 44)
+                    HStack {
+                        if let imageUrl = episode.imageurl, let url = URL(string: imageUrl) {
+                            AsyncImage(url: url)
+                                .frame(width: 50, height: 50)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                        }
+                        Text(episode.title ?? "")
+                            .frame(height: 44)
+                    }
                 }
             }
             .onAppear(perform: loadNews)
