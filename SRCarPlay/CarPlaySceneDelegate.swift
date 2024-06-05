@@ -77,8 +77,8 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
             }
             
             MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
-            if !self.durationIsSet {
-                if !(player?.currentItem?.duration.seconds.isNaN ?? true) {
+            if (!self.durationIsSet) {
+                if (!(player?.currentItem?.duration.seconds.isNaN ?? true)) {
                     self.durationIsSet = true
                     nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = player?.currentItem?.duration.seconds
                 }
@@ -91,14 +91,57 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         let nowPlayingTemplate = CPNowPlayingTemplate.shared
         
         // Push the Now Playing Template to the interface controller
-        interfaceController?.pushTemplate(nowPlayingTemplate, animated: true) { _, _ in
-        }
+        interfaceController?.pushTemplate(nowPlayingTemplate, animated: true) { _, _ in }
         
         // Start playing the audio
         player?.play()
     }
     
-    func setupNowPlayingInfoCenter(){
+    private func showChannelDetail(_ channel: Channel) {
+        guard let liveAudioURLString = channel.liveaudio?.url, let liveAudioURL = URL(string: liveAudioURLString) else {
+            return
+        }
+        
+        // Create an AVPlayer instance with the live audio URL
+        if let timeObserver {
+            player?.removeTimeObserver(timeObserver)
+        }
+        player = AVPlayer(url: liveAudioURL)
+        
+        setupNowPlayingInfoCenter()
+        
+        // Set the Now Playing Info
+        var nowPlayingInfo = [String: Any]()
+        nowPlayingInfo[MPMediaItemPropertyTitle] = channel.name
+        nowPlayingInfo[MPMediaItemPropertyArtist] = channel.tagline
+        
+        // Load the artwork image asynchronously
+        if let imageUrl = channel.image, let artworkURL = URL(string: imageUrl) {
+            let task = URLSession.shared.dataTask(with: artworkURL) { (data, response, error) in
+                guard let data = data, let artworkImage = UIImage(data: data) else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: artworkImage.size) { _ in artworkImage }
+                    MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+                }
+            }
+            task.resume()
+        }
+        
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+        
+        // Create a Now Playing Template
+        let nowPlayingTemplate = CPNowPlayingTemplate.shared
+        
+        // Push the Now Playing Template to the interface controller
+        interfaceController?.pushTemplate(nowPlayingTemplate, animated: true) { _, _ in }
+        
+        // Start playing the live audio
+        player?.play()
+    }
+    
+    func setupNowPlayingInfoCenter() {
         UIApplication.shared.beginReceivingRemoteControlEvents()
         MPRemoteCommandCenter.shared().playCommand.addTarget { event in
             player?.play()
@@ -225,15 +268,13 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
                 }
                 task.resume()
             }
-            listItem.handler = { item, completion in
-                // Handle channel selection if needed
+            listItem.handler = { [weak self] item, completion in
+                self?.showChannelDetail(channel)
                 completion()
             }
             return listItem
         }
         let section = CPListSection(items: listItems)
-
-
         let listTemplate = CPListTemplate(title: "Kanaler", sections: [section])
         listTemplate.tabImage = UIImage(systemName: "radio.fill")
         return listTemplate
