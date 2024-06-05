@@ -49,7 +49,7 @@ struct ChannelDetailView: View {
         VStack {
             if let imageUrl = channel.image, let url = URL(string: imageUrl) {
                 AsyncImage(url: url)
-                    .frame(width: 200, height: 200)
+                    .frame(width: 100, height: 100)
                     .aspectRatio(contentMode: .fit)
             }
             Text(channel.name ?? "")

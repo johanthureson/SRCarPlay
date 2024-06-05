@@ -18,9 +18,21 @@ struct PlayView: View {
     @State private var timer: Timer? = nil
     private let secondsBackward: Double = 5
     private let secondsForward: Double = 30
+    private let padding: CGFloat = 5
 
     var body: some View {
         VStack {
+            if let imageUrl = episodes.imageurl, let url = URL(string: imageUrl) {
+                AsyncImage(url: url)
+                    .frame(width: 100, height: 100)
+                    .aspectRatio(contentMode: .fit)
+            }
+            Text(episodes.title ?? "")
+                .font(.largeTitle)
+                .padding()
+            Text(episodes.description ?? "")
+                .font(.subheadline)
+                .padding()
             VStack {
                 HStack {
                     Text("\(secondsToHoursMinutesSeconds(seconds: Int(currentTime)))")
@@ -33,9 +45,9 @@ struct PlayView: View {
             .padding(.horizontal)
             
             Spacer()
-                .frame(height: 32)
+                .frame(height: 0)
             
-            HStack(spacing: 20) {
+            HStack(spacing: 0) {
                 
                 Button(action: {
                     player?.seek(to: .zero)
@@ -43,8 +55,8 @@ struct PlayView: View {
                     isPlaying = true
                 }) {
                     Image(systemName: "backward.fill")
-                        .resizable()
-                        .frame(width: 50, height: 50)
+                        .font(.system(size: 45)) // 50% bigger font size
+                        .padding(padding)
                 }
 
                 Button(action: {
@@ -53,13 +65,12 @@ struct PlayView: View {
                 }) {
                     ZStack {
                         Image(systemName: "gobackward")
-                            .resizable()
-                            .frame(width: 50, height: 50)
+                            .font(.system(size: 45)) // 50% bigger font size
+                            .padding(padding)
                         Text(String(Int(secondsBackward)))
                             .offset(y: 2)
                     }
                 }
-                
                 
                 Button(action: {
                     if isPlaying {
@@ -70,10 +81,9 @@ struct PlayView: View {
                     isPlaying.toggle()
                 }) {
                     Image(systemName: isPlaying ? "pause.circle" : "play.circle")
-                        .resizable()
-                        .frame(width: 50, height: 50)
+                        .font(.system(size: 45)) // 50% bigger font size
+                        .padding(padding)
                 }
-                
                 
                 Button(action: {
                     print(player?.currentTime().seconds ?? 0)
@@ -81,22 +91,20 @@ struct PlayView: View {
                 }) {
                     ZStack {
                         Image(systemName: "goforward")
-                            .resizable()
-                            .frame(width: 50, height: 50)
+                            .font(.system(size: 45)) // 50% bigger font size
+                            .padding(padding)
                         Text(String(Int(secondsForward)))
                             .offset(y: 2)
                     }
-
                 }
                 
                 Button(action: {
                     player?.seek(to: player?.currentItem?.duration ?? .zero)
                 }) {
                     Image(systemName: "forward.fill")
-                        .resizable()
-                        .frame(width: 50, height: 50)
+                        .font(.system(size: 45)) // 50% bigger font size
+                        .padding(padding)
                 }
-
             }
         }
         .navigationBarTitle(Text(episodes.title ?? ""), displayMode: .inline)
@@ -155,7 +163,6 @@ struct PlayView: View {
         }
         return String(format: "%d:%02d:%02d", h, m, s)
     }
-
 }
 
 #Preview {
