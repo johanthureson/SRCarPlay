@@ -63,22 +63,22 @@ struct ChannelDetailView: View {
                     viewModel.skipBackward()
                 }) {
                     Image(systemName: "gobackward.10")
-                        .font(.title)
-                        .padding()
+                        .font(.system(size: 45)) // 50% bigger font size
+                        .padding(10) // Increased padding
                 }
                 Button(action: {
                     viewModel.togglePlayPause()
                 }) {
                     Image(systemName: viewModel.isPlaying ? "pause.circle" : "play.circle")
-                        .font(.title)
-                        .padding()
+                        .font(.system(size: 45)) // 50% bigger font size
+                        .padding(10) // Increased padding
                 }
                 Button(action: {
                     viewModel.skipForward()
                 }) {
                     Image(systemName: "goforward.10")
-                        .font(.title)
-                        .padding()
+                        .font(.system(size: 45)) // 50% bigger font size
+                        .padding(10) // Increased padding
                 }
             }
         }
