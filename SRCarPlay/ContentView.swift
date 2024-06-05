@@ -6,7 +6,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedTab = 1
+    @State private var selectedTab = 0
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -16,7 +16,7 @@ struct ContentView: View {
                     Text("Nyheter")
                 }
                 .tag(0)
-            Text("Kanaler")
+            ChannelView(viewModel: ChannelViewModel())
                 .tabItem {
                     Image(systemName: "radio.fill")
                     Text("Kanaler")

@@ -4,7 +4,7 @@ struct ChannelsResponse: Codable {
     let channels: [Channel]
 }
 
-struct Channel: Codable {
+struct Channel: Codable, Identifiable {
     let image : String?
     let imagetemplate : String?
     let color : String?

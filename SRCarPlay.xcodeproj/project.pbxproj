@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D0439D72C1060F600B79D9E /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0439D62C1060F600B79D9E /* Channel.swift */; };
 		4D0439DB2C10616900B79D9E /* Liveaudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0439DA2C10616800B79D9E /* Liveaudio.swift */; };
+		4D0439E32C106D9C00B79D9E /* ChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0439E22C106D9C00B79D9E /* ChannelView.swift */; };
 		4DB3BCC02C05E1AD00C3472A /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCBF2C05E1AD00C3472A /* NewsView.swift */; };
 		4DB3BCC22C05E1B600C3472A /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCC12C05E1B600C3472A /* PlayView.swift */; };
 		4DB3BCCD2C05E1C400C3472A /* Broadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCC32C05E1C400C3472A /* Broadcast.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		4D0439D62C1060F600B79D9E /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		4D0439DA2C10616800B79D9E /* Liveaudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Liveaudio.swift; sourceTree = "<group>"; };
+		4D0439E22C106D9C00B79D9E /* ChannelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelView.swift; sourceTree = "<group>"; };
 		4DB3BCBF2C05E1AD00C3472A /* NewsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		4DB3BCC12C05E1B600C3472A /* PlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
 		4DB3BCC32C05E1C400C3472A /* Broadcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broadcast.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				BB17CA4F2A12FBF1004E4375 /* entitlements.plist */,
 				BB17CA3C2A12F59F004E4375 /* ContentView.swift */,
 				4DB3BCBF2C05E1AD00C3472A /* NewsView.swift */,
+				4D0439E22C106D9C00B79D9E /* ChannelView.swift */,
 				4DB3BCC12C05E1B600C3472A /* PlayView.swift */,
 				4DB3BCCC2C05E1C400C3472A /* Models */,
 				BB17CA3E2A12F5A2004E4375 /* Assets.xcassets */,
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D0439E32C106D9C00B79D9E /* ChannelView.swift in Sources */,
 				4DB3BCC22C05E1B600C3472A /* PlayView.swift in Sources */,
 				4DB3BCD32C05E1C400C3472A /* Playlist.swift in Sources */,
 				BB17CA3D2A12F59F004E4375 /* ContentView.swift in Sources */,
