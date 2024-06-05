@@ -7,15 +7,6 @@
 
 import SwiftUI
 
-//struct Episode: Codable, Identifiable {
-//    let id: Int
-//    let title: String
-//}
-//
-//struct News: Co/Users/johanthureson/Documents/B3dable {
-//    let episodes: [Episode]
-//}
-
 struct NewsView: View {
     
     @State private var news = News(episodes: [])
