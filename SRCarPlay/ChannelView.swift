@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-
-import SwiftUI
 import AVFoundation
 import MediaPlayer
 
@@ -62,30 +60,48 @@ struct ChannelDetailView: View {
             Text(channel.tagline ?? "")
                 .font(.subheadline)
                 .padding()
-            Button(action: {
-                viewModel.playChannel(channel)
-            }) {
-                Text("Play Live Audio")
-                    .font(.headline)
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+            HStack {
+                Button(action: {
+                    viewModel.skipBackward()
+                }) {
+                    Image(systemName: "gobackward.10")
+                        .font(.title)
+                        .padding()
+                }
+                Button(action: {
+                    viewModel.togglePlayPause()
+                }) {
+                    Image(systemName: viewModel.isPlaying ? "pause.circle" : "play.circle")
+                        .font(.title)
+                        .padding()
+                }
+                Button(action: {
+                    viewModel.skipForward()
+                }) {
+                    Image(systemName: "goforward.10")
+                        .font(.title)
+                        .padding()
+                }
             }
         }
         .navigationBarTitle(Text(channel.name ?? ""), displayMode: .inline)
+        .onAppear {
+            viewModel.playChannel(channel)
+        }
     }
 }
 
-
-
-
 import Foundation
 import AVFoundation
+import MediaPlayer
 
 class ChannelViewModel: ObservableObject {
     @Published var channels: [Channel] = []
+    @Published var isPlaying = false
     var player: AVPlayer?
+    
+    private let secondsBackward: Double = 10
+    private let secondsForward: Double = 10
     
     func loadChannels() {
         guard let url = URL(string: "https://api.sr.se/api/v2/channels?format=json") else {
@@ -112,7 +128,29 @@ class ChannelViewModel: ObservableObject {
         }
         player = AVPlayer(url: liveAudioURL)
         player?.play()
+        isPlaying = true
         setupNowPlayingInfoCenter(channel: channel)
+    }
+    
+    func togglePlayPause() {
+        if isPlaying {
+            player?.pause()
+        } else {
+            player?.play()
+        }
+        isPlaying.toggle()
+    }
+    
+    func skipBackward() {
+        let currentTime = player?.currentTime() ?? CMTime(seconds: 0, preferredTimescale: 1)
+        let newTime = CMTime(seconds: max(0, currentTime.seconds - secondsBackward), preferredTimescale: 1)
+        player?.seek(to: newTime)
+    }
+    
+    func skipForward() {
+        let currentTime = player?.currentTime() ?? CMTime(seconds: 0, preferredTimescale: 1)
+        let newTime = CMTime(seconds: currentTime.seconds + secondsForward, preferredTimescale: 1)
+        player?.seek(to: newTime)
     }
     
     private func setupNowPlayingInfoCenter(channel: Channel) {
@@ -127,10 +165,20 @@ class ChannelViewModel: ObservableObject {
         UIApplication.shared.beginReceivingRemoteControlEvents()
         MPRemoteCommandCenter.shared().playCommand.addTarget { event in
             self.player?.play()
+            self.isPlaying = true
             return .success
         }
         MPRemoteCommandCenter.shared().pauseCommand.addTarget { event in
             self.player?.pause()
+            self.isPlaying = false
+            return .success
+        }
+        MPRemoteCommandCenter.shared().skipBackwardCommand.addTarget { event in
+            self.skipBackward()
+            return .success
+        }
+        MPRemoteCommandCenter.shared().skipForwardCommand.addTarget { event in
+            self.skipForward()
             return .success
         }
     }
