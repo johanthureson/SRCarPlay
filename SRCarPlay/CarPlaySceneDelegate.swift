@@ -7,10 +7,6 @@ import CarPlay
 import AVFoundation
 import MediaPlayer
 
-
-// Add a player property to your class
-var player: AVPlayer?
-
 class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     var interfaceController: CPInterfaceController?
     var newsEpisodes: [Episodes] = []
@@ -22,6 +18,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     private var timeObserver: Any?
     private let placeholderImage = UIImage(systemName: "photo.circle.fill")
     private let basePath = "https://api.sr.se/api/v2"
+    private var player: AVPlayer?
     
     func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene, didConnect interfaceController: CPInterfaceController) {
         self.interfaceController = interfaceController
@@ -264,21 +261,21 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     func setupNowPlayingInfoCenter() {
         UIApplication.shared.beginReceivingRemoteControlEvents()
         MPRemoteCommandCenter.shared().playCommand.addTarget { event in
-            player?.play()
+            self.player?.play()
             return .success
         }
         MPRemoteCommandCenter.shared().pauseCommand.addTarget { event in
-            player?.pause()
+            self.player?.pause()
             return .success
         }
         MPRemoteCommandCenter.shared().skipBackwardCommand.addTarget { event in
-            let cmTime = CMTime(seconds: (player?.currentTime().seconds ?? 0) - self.secondsBackward, preferredTimescale: 1)
-            player?.seek(to: cmTime)
+            let cmTime = CMTime(seconds: (self.player?.currentTime().seconds ?? 0) - self.secondsBackward, preferredTimescale: 1)
+            self.player?.seek(to: cmTime)
             return .success
         }
         MPRemoteCommandCenter.shared().skipForwardCommand.addTarget { event in
-            let cmTime = CMTime(seconds: (player?.currentTime().seconds ?? 0) + self.secondsForward, preferredTimescale: 1)
-            player?.seek(to: cmTime)
+            let cmTime = CMTime(seconds: (self.player?.currentTime().seconds ?? 0) + self.secondsForward, preferredTimescale: 1)
+            self.player?.seek(to: cmTime)
             return .success
         }
     }
