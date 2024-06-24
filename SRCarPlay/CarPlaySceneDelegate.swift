@@ -151,8 +151,9 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         }
         
         // Create an AVPlayer instance with the audio URL
-        if let timeObserver {
-            player?.removeTimeObserver(timeObserver)
+        if let localTimeObserver = timeObserver {
+            player?.removeTimeObserver(localTimeObserver)
+            timeObserver = nil
         }
         player = AVPlayer(url: audioURL)
         
@@ -218,8 +219,9 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         }
         
         // Create an AVPlayer instance with the live audio URL
-        if let timeObserver {
-            player?.removeTimeObserver(timeObserver)
+        if let localTimeObserver = timeObserver {
+            player?.removeTimeObserver(localTimeObserver)
+            timeObserver = nil
         }
         player = AVPlayer(url: liveAudioURL)
         
