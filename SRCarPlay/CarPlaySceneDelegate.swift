@@ -59,7 +59,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     }
 
     private func loadChannels() {
-        guard let url = URL(string: "/channels?format=json") else {
+        guard let url = URL(string: basePath + "/channels?format=json") else {
             print("Invalid URL")
             return
         }
