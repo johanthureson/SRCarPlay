@@ -8,9 +8,11 @@ import AVFoundation
 import MediaPlayer
 
 class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
-    var interfaceController: CPInterfaceController?
-    var newsEpisodes: [Episodes] = []
-    var channels: [Channel] = []
+    
+    private var player: AVPlayer?
+    private var interfaceController: CPInterfaceController?
+    private var newsEpisodes: [Episodes] = []
+    private var channels: [Channel] = []
     
     private let secondsBackward: Double = 10
     private let secondsForward: Double = 10
@@ -18,7 +20,6 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     private var timeObserver: Any?
     private let placeholderImage = UIImage(systemName: "photo.circle.fill")
     private let basePath = "https://api.sr.se/api/v2"
-    private var player: AVPlayer?
     
     func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene, didConnect interfaceController: CPInterfaceController) {
         self.interfaceController = interfaceController
