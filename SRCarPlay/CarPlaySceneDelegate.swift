@@ -20,7 +20,8 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     private let secondsForward: Double = 10
     private var durationIsSet = false
     private var timeObserver: Any?
-    let placeholderImage = UIImage(systemName: "photo.circle.fill")
+    private let placeholderImage = UIImage(systemName: "photo.circle.fill")
+    private let basePath = "https://api.sr.se/api/v2"
     
     func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene, didConnect interfaceController: CPInterfaceController) {
         self.interfaceController = interfaceController
@@ -34,7 +35,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     }
     
     private func loadNews() {
-        guard let url = URL(string: "https://api.sr.se/api/v2/news/episodes?format=json") else {
+        guard let url = URL(string: basePath + "/news/episodes?format=json") else {
             print("Invalid URL")
             return
         }
@@ -58,7 +59,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     }
 
     private func loadChannels() {
-        guard let url = URL(string: "https://api.sr.se/api/v2/channels?format=json") else {
+        guard let url = URL(string: "/channels?format=json") else {
             print("Invalid URL")
             return
         }
