@@ -7,7 +7,6 @@ import CarPlay
 import AVFoundation
 import MediaPlayer
 
-let placeholderImage = UIImage(systemName: "photo.circle.fill")
 
 // Add a player property to your class
 var player: AVPlayer?
@@ -21,6 +20,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     private let secondsForward: Double = 10
     private var durationIsSet = false
     private var timeObserver: Any?
+    let placeholderImage = UIImage(systemName: "photo.circle.fill")
     
     func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene, didConnect interfaceController: CPInterfaceController) {
         self.interfaceController = interfaceController
@@ -164,7 +164,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         
         // Load the artwork image asynchronously
         nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: placeholderImage?.size ?? CGSize.zero) { _ in
-            return placeholderImage!
+            return self.placeholderImage ?? UIImage()
         }
         if let imageUrl = episodes.imageurl, let artworkURL = URL(string: imageUrl) {
             let task = URLSession.shared.dataTask(with: artworkURL) { (data, response, error) in
@@ -231,7 +231,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         
         // Load the artwork image asynchronously
         nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: placeholderImage?.size ?? CGSize.zero) { _ in
-            return placeholderImage!
+            return self.placeholderImage ?? UIImage()
         }
         if let imageUrl = channel.image, let artworkURL = URL(string: imageUrl) {
             let task = URLSession.shared.dataTask(with: artworkURL) { (data, response, error) in
