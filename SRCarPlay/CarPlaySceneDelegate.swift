@@ -4,7 +4,6 @@
 //
 
 import CarPlay
-import AVFoundation
 import MediaPlayer
 
 class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
