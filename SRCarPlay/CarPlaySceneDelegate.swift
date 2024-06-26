@@ -147,11 +147,8 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
             return
         }
         
+        resetTimeObserver()
         // Create an AVPlayer instance with the audio URL
-        if let localTimeObserver = timeObserver {
-            player?.removeTimeObserver(localTimeObserver)
-            timeObserver = nil
-        }
         player = AVPlayer(url: audioURL)
         
         setupNowPlayingInfoCenter()
@@ -215,11 +212,8 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
             return
         }
         
+        resetTimeObserver()
         // Create an AVPlayer instance with the live audio URL
-        if let localTimeObserver = timeObserver {
-            player?.removeTimeObserver(localTimeObserver)
-            timeObserver = nil
-        }
         player = AVPlayer(url: liveAudioURL)
         
         setupNowPlayingInfoCenter()
@@ -277,6 +271,13 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
             let cmTime = CMTime(seconds: (self.player?.currentTime().seconds ?? 0) + self.secondsForward, preferredTimescale: 1)
             self.player?.seek(to: cmTime)
             return .success
+        }
+    }
+    
+    private func resetTimeObserver() {
+        if let localTimeObserver = timeObserver {
+            player?.removeTimeObserver(localTimeObserver)
+            timeObserver = nil
         }
     }
     
