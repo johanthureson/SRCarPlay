@@ -258,7 +258,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         player?.play()
     }
  
-    func setupNowPlayingInfoCenter() {
+    private func setupNowPlayingInfoCenter() {
         UIApplication.shared.beginReceivingRemoteControlEvents()
         MPRemoteCommandCenter.shared().playCommand.addTarget { event in
             self.player?.play()
