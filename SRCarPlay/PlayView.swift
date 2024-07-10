@@ -156,10 +156,10 @@ struct PlayView: View {
 
     private func formatDuration(h: Int, m: Int, s: Int) -> String {
         if m == 0 {
-            return String(format: "%2d", s)
+            return "00:" + String(format: "%02d", s)
         }
         if h == 0 {
-            return String(format: "%2d:%02d", m, s)
+            return String(format: "%02d:%02d", m, s)
         }
         return String(format: "%d:%02d:%02d", h, m, s)
     }
