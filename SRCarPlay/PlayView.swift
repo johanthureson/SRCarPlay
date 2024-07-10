@@ -19,6 +19,7 @@ struct PlayView: View {
     private let secondsBackward: Double = 5
     private let secondsForward: Double = 30
     private let padding: CGFloat = 5
+    @State private var timeControlStatus: AVPlayer.TimeControlStatus?
 
     var body: some View {
         VStack {
@@ -86,7 +87,6 @@ struct PlayView: View {
                 }
                 
                 Button(action: {
-                    print(player?.currentTime().seconds ?? 0)
                     player?.seek(to: CMTime(seconds: (player?.currentTime().seconds ?? 0) + secondsForward, preferredTimescale: 1))
                 }) {
                     ZStack {
@@ -139,11 +139,17 @@ struct PlayView: View {
     }
     
     private func sliderEditingChanged(editingStarted: Bool) {
+        if timeControlStatus == nil {
+            timeControlStatus = player?.timeControlStatus
+        }
         if editingStarted {
             player?.pause()
         } else {
             player?.seek(to: CMTime(seconds: currentTime, preferredTimescale: 1))
-            player?.play()
+            if timeControlStatus == .playing {
+                player?.play()
+            }
+            timeControlStatus = nil
         }
     }
     
