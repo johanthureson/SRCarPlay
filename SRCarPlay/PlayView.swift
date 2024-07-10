@@ -40,7 +40,9 @@ struct PlayView: View {
                     Spacer()
                     Text("-\(secondsToHoursMinutesSeconds(seconds: Int(streamDuration - currentTime)))")
                 }
+
                 Slider(value: $currentTime, in: 0...streamDuration, onEditingChanged: sliderEditingChanged)
+
             }
             .padding()
             .padding(.horizontal)
@@ -56,7 +58,7 @@ struct PlayView: View {
                     isPlaying = true
                 }) {
                     Image(systemName: "backward.fill")
-                        .font(.system(size: 45)) // 50% bigger font size
+                        .font(.system(size: 30))
                         .padding(padding)
                 }
 
@@ -66,7 +68,7 @@ struct PlayView: View {
                 }) {
                     ZStack {
                         Image(systemName: "gobackward")
-                            .font(.system(size: 45)) // 50% bigger font size
+                            .font(.system(size: 45))
                             .padding(padding)
                         Text(String(Int(secondsBackward)))
                             .offset(y: 2)
@@ -82,7 +84,7 @@ struct PlayView: View {
                     isPlaying.toggle()
                 }) {
                     Image(systemName: isPlaying ? "pause.circle" : "play.circle")
-                        .font(.system(size: 45)) // 50% bigger font size
+                        .font(.system(size: 60))
                         .padding(padding)
                 }
                 
@@ -91,7 +93,7 @@ struct PlayView: View {
                 }) {
                     ZStack {
                         Image(systemName: "goforward")
-                            .font(.system(size: 45)) // 50% bigger font size
+                            .font(.system(size: 45))
                             .padding(padding)
                         Text(String(Int(secondsForward)))
                             .offset(y: 2)
@@ -102,7 +104,7 @@ struct PlayView: View {
                     player?.seek(to: player?.currentItem?.duration ?? .zero)
                 }) {
                     Image(systemName: "forward.fill")
-                        .font(.system(size: 45)) // 50% bigger font size
+                        .font(.system(size: 30))
                         .padding(padding)
                 }
             }
