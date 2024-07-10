@@ -124,7 +124,9 @@ struct PlayView: View {
         guard let urlString = episodes.broadcast?.broadcastfiles?.first?.url,
               let audioURL = URL(string: urlString) else { return }
         
-        player = AVPlayer(url: audioURL)
+        if player == nil {
+            player = AVPlayer(url: audioURL)
+        }
         player?.play()
         isPlaying = true
         
