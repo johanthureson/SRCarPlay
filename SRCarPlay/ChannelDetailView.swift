@@ -10,6 +10,7 @@ import SwiftUI
 struct ChannelDetailView: View {
     @ObservedObject var viewModel: ChannelViewModel
     var channel: Channel
+    private let padding: CGFloat = 5
     
     var body: some View {
         VStack {
@@ -28,23 +29,33 @@ struct ChannelDetailView: View {
                 Button(action: {
                     viewModel.skipBackward()
                 }) {
-                    Image(systemName: "gobackward.10")
-                        .font(.system(size: 45)) // 50% bigger font size
-                        .padding(10) // Increased padding
+                    ZStack {
+                        Image(systemName: "gobackward")
+                            .font(.system(size: 45))
+                            .padding(padding)
+                        Text(String(Int(viewModel.secondsBackward)))
+                            .bold()
+                            .offset(y: 2)
+                    }
                 }
                 Button(action: {
                     viewModel.togglePlayPause()
                 }) {
                     Image(systemName: viewModel.isPlaying ? "pause.circle" : "play.circle")
-                        .font(.system(size: 45)) // 50% bigger font size
-                        .padding(10) // Increased padding
+                        .font(.system(size: 60))
+                        .padding(10)
                 }
                 Button(action: {
                     viewModel.skipForward()
                 }) {
-                    Image(systemName: "goforward.10")
-                        .font(.system(size: 45)) // 50% bigger font size
-                        .padding(10) // Increased padding
+                    ZStack {
+                        Image(systemName: "goforward")
+                            .font(.system(size: 45))
+                            .padding(padding)
+                        Text(String(Int(viewModel.secondsForward)))
+                            .bold()
+                            .offset(y: 2)
+                    }
                 }
             }
         }

@@ -14,8 +14,8 @@ class ChannelViewModel: ObservableObject {
     @Published var isPlaying = false
     var player: AVPlayer?
     
-    private let secondsBackward: Double = 10
-    private let secondsForward: Double = 10
+    let secondsBackward: Double = 5
+    let secondsForward: Double = 30
     
     func loadChannels() {
         guard let url = URL(string: "https://api.sr.se/api/v2/channels?format=json") else {

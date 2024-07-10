@@ -71,6 +71,7 @@ struct PlayView: View {
                             .font(.system(size: 45))
                             .padding(padding)
                         Text(String(Int(secondsBackward)))
+                            .bold()
                             .offset(y: 2)
                     }
                 }
@@ -96,6 +97,7 @@ struct PlayView: View {
                             .font(.system(size: 45))
                             .padding(padding)
                         Text(String(Int(secondsForward)))
+                            .bold()
                             .offset(y: 2)
                     }
                 }
