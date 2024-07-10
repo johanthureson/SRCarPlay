@@ -15,7 +15,7 @@ struct ChannelView: View {
     var body: some View {
         NavigationView {
             List(viewModel.channels) { channel in
-                NavigationLink(destination: ChannelDetailView(viewModel: viewModel, channel: channel)) {
+                NavigationLink(destination: ChannelPlayView(viewModel: viewModel, channel: channel)) {
                     HStack {
                         if let imageUrl = channel.image, let url = URL(string: imageUrl) {
                             AsyncImage(url: url)

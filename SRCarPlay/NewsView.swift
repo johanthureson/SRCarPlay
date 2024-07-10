@@ -13,7 +13,7 @@ struct NewsView: View {
     var body: some View {
         NavigationView {
             List(news.episodes ?? []) { episode in
-                NavigationLink(destination: PlayView(episodes: episode)) {
+                NavigationLink(destination: NewsPlayView(episodes: episode)) {
                     HStack {
                         if let imageUrl = episode.imageurl, let url = URL(string: imageUrl) {
                             AsyncImage(url: url)

@@ -1,5 +1,5 @@
 //
-//  PlayView.swift
+//  NewsPlayView.swift
 //  SRCarPlay
 //
 //  Created by Johan Thureson on 2024-04-01.
@@ -8,7 +8,7 @@
 import SwiftUI
 import AVFoundation
 
-struct PlayView: View {
+struct NewsPlayView: View {
     
     var episodes: Episodes
     @State private var player: AVPlayer?
@@ -178,5 +178,5 @@ struct PlayView: View {
 }
 
 #Preview {
-    PlayView(episodes: Episodes())
+    NewsPlayView(episodes: Episodes())
 }

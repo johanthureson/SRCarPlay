@@ -1,5 +1,5 @@
 //
-//  ChannelDetailView.swift
+//  ChannelPlayView.swift
 //  SRCarPlay
 //
 //  Created by Johan Thureson on 2024-06-26.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ChannelDetailView: View {
+struct ChannelPlayView: View {
     @ObservedObject var viewModel: ChannelViewModel
     var channel: Channel
     private let padding: CGFloat = 5
