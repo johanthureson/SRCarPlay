@@ -11,7 +11,6 @@ import MediaPlayer
 struct FullPlayerView: View {
     
     @Environment(PlayerModel.self) var playerModel
-    @State private var currentTime = 0.0
     
     var body: some View {
         if let episodes = playerModel.episodes {
@@ -29,12 +28,12 @@ struct FullPlayerView: View {
                     .padding()
                 VStack {
                     HStack {
-                        Text("\(secondsToHoursMinutesSeconds(seconds: Int(currentTime)))")
+                        Text("\(secondsToHoursMinutesSeconds(seconds: Int(playerModel.currentTime)))")
                         Spacer()
-                        Text("-\(secondsToHoursMinutesSeconds(seconds: Int(playerModel.streamDuration - currentTime)))")
+                        Text("-\(secondsToHoursMinutesSeconds(seconds: Int(playerModel.streamDuration - playerModel.currentTime)))")
                     }
                     
-                    Slider(value: $currentTime, in: 0...playerModel.streamDuration, onEditingChanged: sliderEditingChanged)
+                    Slider(value: playerModel.currentTimeBinding, in: 0...playerModel.streamDuration, onEditingChanged: sliderEditingChanged)
                     
                 }
                 .padding()
@@ -106,7 +105,7 @@ struct FullPlayerView: View {
             }
             .navigationBarTitle(Text(episodes.title ?? ""), displayMode: .inline)
             .onAppear {
-                play()
+                playerModel.play()
             }
             .onDisappear {
                 playerModel.timer?.invalidate()
@@ -115,29 +114,6 @@ struct FullPlayerView: View {
         
     }
     
-    private func play() {
-        guard let urlString = playerModel.episodes?.broadcast?.broadcastfiles?.first?.url,
-              let audioURL = URL(string: urlString) else { return }
-        
-        if playerModel.player == nil {
-            playerModel.player = AVPlayer(url: audioURL)
-        }
-        playerModel.player?.play()
-        playerModel.isPlaying = true
-        
-        playerModel.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            currentTime = playerModel.player?.currentTime().seconds ?? 0
-            guard let seconds = playerModel.player?.currentItem?.duration.seconds else {
-                playerModel.streamDuration = 0
-                return
-            }
-            if seconds.isNaN {
-                playerModel.streamDuration = 0
-            } else {
-                playerModel.streamDuration = seconds
-            }
-        }
-    }
     
     private func sliderEditingChanged(editingStarted: Bool) {
         if playerModel.timeControlStatus == nil {
@@ -146,7 +122,7 @@ struct FullPlayerView: View {
         if editingStarted {
             playerModel.player?.pause()
         } else {
-            playerModel.player?.seek(to: CMTime(seconds: currentTime, preferredTimescale: 1))
+            playerModel.player?.seek(to: CMTime(seconds: playerModel.currentTime, preferredTimescale: 1))
             if playerModel.timeControlStatus == .playing {
                 playerModel.player?.play()
             }
