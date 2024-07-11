@@ -10,8 +10,9 @@
 		4D0439D72C1060F600B79D9E /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0439D62C1060F600B79D9E /* Channel.swift */; };
 		4D0439DB2C10616900B79D9E /* Liveaudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0439DA2C10616800B79D9E /* Liveaudio.swift */; };
 		4D0439E32C106D9C00B79D9E /* ChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0439E22C106D9C00B79D9E /* ChannelView.swift */; };
+		4D5A65862C3F3A5500B5DDE3 /* FullPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5A65852C3F3A5500B5DDE3 /* FullPlayerView.swift */; };
+		4D5A65882C3FC02A00B5DDE3 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5A65872C3FC02A00B5DDE3 /* PlayerModel.swift */; };
 		4DB3BCC02C05E1AD00C3472A /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCBF2C05E1AD00C3472A /* NewsView.swift */; };
-		4DB3BCC22C05E1B600C3472A /* NewsPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCC12C05E1B600C3472A /* NewsPlayView.swift */; };
 		4DB3BCCD2C05E1C400C3472A /* Broadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCC32C05E1C400C3472A /* Broadcast.swift */; };
 		4DB3BCCE2C05E1C400C3472A /* Broadcastfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCC42C05E1C400C3472A /* Broadcastfiles.swift */; };
 		4DB3BCCF2C05E1C400C3472A /* Broadcasttime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCC52C05E1C400C3472A /* Broadcasttime.swift */; };
@@ -35,8 +36,9 @@
 		4D0439D62C1060F600B79D9E /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		4D0439DA2C10616800B79D9E /* Liveaudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Liveaudio.swift; sourceTree = "<group>"; };
 		4D0439E22C106D9C00B79D9E /* ChannelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelView.swift; sourceTree = "<group>"; };
+		4D5A65852C3F3A5500B5DDE3 /* FullPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPlayerView.swift; sourceTree = "<group>"; };
+		4D5A65872C3FC02A00B5DDE3 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		4DB3BCBF2C05E1AD00C3472A /* NewsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
-		4DB3BCC12C05E1B600C3472A /* NewsPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsPlayView.swift; sourceTree = "<group>"; };
 		4DB3BCC32C05E1C400C3472A /* Broadcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broadcast.swift; sourceTree = "<group>"; };
 		4DB3BCC42C05E1C400C3472A /* Broadcastfiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broadcastfiles.swift; sourceTree = "<group>"; };
 		4DB3BCC52C05E1C400C3472A /* Broadcasttime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broadcasttime.swift; sourceTree = "<group>"; };
@@ -123,9 +125,10 @@
 				4D0439E22C106D9C00B79D9E /* ChannelView.swift */,
 				4DCD62C02C2C229400CC094F /* ChannelViewModel.swift */,
 				4DCD62BA2C2C225A00CC094F /* ChannelPlayView.swift */,
+				4D5A65852C3F3A5500B5DDE3 /* FullPlayerView.swift */,
+				4D5A65872C3FC02A00B5DDE3 /* PlayerModel.swift */,
 				4DCD62BC2C2C226D00CC094F /* AsyncImage.swift */,
 				4DCD62BE2C2C228D00CC094F /* ImageLoader.swift */,
-				4DB3BCC12C05E1B600C3472A /* NewsPlayView.swift */,
 				4DB3BCCC2C05E1C400C3472A /* Models */,
 				BB17CA3E2A12F5A2004E4375 /* Assets.xcassets */,
 				BB17CA402A12F5A2004E4375 /* Preview Content */,
@@ -212,8 +215,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D0439E32C106D9C00B79D9E /* ChannelView.swift in Sources */,
-				4DB3BCC22C05E1B600C3472A /* NewsPlayView.swift in Sources */,
 				4DB3BCD32C05E1C400C3472A /* Playlist.swift in Sources */,
+				4D5A65862C3F3A5500B5DDE3 /* FullPlayerView.swift in Sources */,
 				BB17CA3D2A12F59F004E4375 /* ContentView.swift in Sources */,
 				4DCD62BB2C2C225A00CC094F /* ChannelPlayView.swift in Sources */,
 				BB17CA4B2A12F61C004E4375 /* CarPlaySceneDelegate.swift in Sources */,
@@ -222,6 +225,7 @@
 				4DB3BCCD2C05E1C400C3472A /* Broadcast.swift in Sources */,
 				4DCD62BF2C2C228D00CC094F /* ImageLoader.swift in Sources */,
 				4D0439D72C1060F600B79D9E /* Channel.swift in Sources */,
+				4D5A65882C3FC02A00B5DDE3 /* PlayerModel.swift in Sources */,
 				4DCD62BD2C2C226D00CC094F /* AsyncImage.swift in Sources */,
 				4DB3BCD22C05E1C400C3472A /* News.swift in Sources */,
 				4DB3BCCE2C05E1C400C3472A /* Broadcastfiles.swift in Sources */,
@@ -374,6 +378,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -407,6 +412,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

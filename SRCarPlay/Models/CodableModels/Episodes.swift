@@ -1,5 +1,15 @@
 import Foundation
-struct Episodes : Codable, Identifiable {
+struct Episodes : Codable, Identifiable, Hashable {
+    
+    // Conformance to Equatable
+    static func == (lhs: Episodes, rhs: Episodes) -> Bool {
+        lhs.id ?? 0 == rhs.id ?? 1
+    }
+    // Conformance to Hashable
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
 	let id : Int?
 	let title : String?
 	let description : String?
