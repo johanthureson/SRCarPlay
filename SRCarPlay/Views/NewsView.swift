@@ -15,7 +15,7 @@ struct NewsView: View {
     
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(news.episodes ?? [], id: \.self) { episode in
                     Button(action: {
@@ -33,22 +33,17 @@ struct NewsView: View {
                                 .frame(height: 32)
                         }
                     }
-                    // This is moved outside the Button but still inside the ForEach
-                    .background(
-                        NavigationLink(destination: FullPlayerView(), isActive: Binding<Bool>(
-                            get: { self.selectedEpisode == episode },
-                            set: { _ in }
-                        )) {
-                            EmptyView()
-                        }
-                            .hidden()
-                    )
                 }
             }
             .onAppear(perform: loadNews)
+            .navigationDestination(isPresented: Binding<Bool>(
+                get: { selectedEpisode != nil },
+                set: { if !$0 { selectedEpisode = nil } }
+            )) {
+                FullPlayerView()
+            }
             .navigationBarTitle("Nyheter", displayMode: .inline)
         }
-        
     }
     
     func loadNews() {
@@ -71,8 +66,4 @@ struct NewsView: View {
             print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
         }.resume()
     }
-}
-
-#Preview {
-    NewsView()
 }
