@@ -14,25 +14,31 @@ struct NewsView: View {
     @State private var selectedEpisode: Episodes?
     
     var body: some View {
-        
         NavigationStack {
             List {
-                ForEach(news.episodes ?? [], id: \.self) { episode in
-                    Button(action: {
-                        self.playerModel.episodes = episode
-                        self.selectedEpisode = episode // This triggers the navigation
-                    }) {
-                        HStack {
-                            if let imageUrl = episode.imageurl, let url = URL(string: imageUrl) {
-                                AsyncImage(url: url)
-                                    .frame(width: 50, height: 50)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                Section {
+                    ForEach(news.episodes ?? [], id: \.self) { episode in
+                        Button(action: {
+                            self.playerModel.episodes = episode
+                            self.selectedEpisode = episode // This triggers the navigation
+                        }) {
+                            HStack {
+                                if let imageUrl = episode.imageurl, let url = URL(string: imageUrl) {
+                                    AsyncImage(url: url)
+                                        .frame(width: 50, height: 50)
+                                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                                }
+                                Spacer().frame(width: 16)
+                                Text(episode.title ?? "")
+                                    .frame(height: 32)
                             }
-                            Spacer().frame(width: 16)
-                            Text(episode.title ?? "")
-                                .frame(height: 32)
                         }
                     }
+                    
+                } footer: {
+                    Spacer()
+                        .frame(height: 64)
+                        .background(Color.clear)
                 }
             }
             .onAppear(perform: loadNews)
