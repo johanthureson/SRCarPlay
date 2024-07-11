@@ -72,6 +72,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D5A65892C3FC0ED00B5DDE3 /* CarPlay */ = {
+			isa = PBXGroup;
+			children = (
+				BB17CA4A2A12F61C004E4375 /* CarPlaySceneDelegate.swift */,
+			);
+			path = CarPlay;
+			sourceTree = "<group>";
+		};
+		4D5A658B2C3FC11C00B5DDE3 /* GeneralModels */ = {
+			isa = PBXGroup;
+			children = (
+				4DCD62C02C2C229400CC094F /* ChannelViewModel.swift */,
+				4D5A65872C3FC02A00B5DDE3 /* PlayerModel.swift */,
+			);
+			path = GeneralModels;
+			sourceTree = "<group>";
+		};
+		4D5A658C2C3FC13E00B5DDE3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB17CA3C2A12F59F004E4375 /* ContentView.swift */,
+				4DB3BCBF2C05E1AD00C3472A /* NewsView.swift */,
+				4D0439E22C106D9C00B79D9E /* ChannelView.swift */,
+				4DCD62BA2C2C225A00CC094F /* ChannelPlayView.swift */,
+				4D5A65852C3F3A5500B5DDE3 /* FullPlayerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4D5A658D2C3FC18200B5DDE3 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				4DCD62BC2C2C226D00CC094F /* AsyncImage.swift */,
+				4DCD62BE2C2C228D00CC094F /* ImageLoader.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
 		4DB3BCCB2C05E1C400C3472A /* CodableModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,14 +125,6 @@
 				4DB3BCCA2C05E1C400C3472A /* Program.swift */,
 			);
 			path = CodableModels;
-			sourceTree = "<group>";
-		};
-		4DB3BCCC2C05E1C400C3472A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				4DB3BCCB2C05E1C400C3472A /* CodableModels */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		BB17CA2E2A12F59F004E4375 = {
@@ -116,20 +146,14 @@
 		BB17CA392A12F59F004E4375 /* SRCarPlay */ = {
 			isa = PBXGroup;
 			children = (
-				BB17CA4E2A12F958004E4375 /* Info.plist */,
 				BB17CA3A2A12F59F004E4375 /* SRCarPlayApp.swift */,
-				BB17CA4A2A12F61C004E4375 /* CarPlaySceneDelegate.swift */,
+				4D5A658C2C3FC13E00B5DDE3 /* Views */,
+				4D5A658B2C3FC11C00B5DDE3 /* GeneralModels */,
+				4DB3BCCB2C05E1C400C3472A /* CodableModels */,
+				4D5A658D2C3FC18200B5DDE3 /* ViewComponents */,
+				4D5A65892C3FC0ED00B5DDE3 /* CarPlay */,
+				BB17CA4E2A12F958004E4375 /* Info.plist */,
 				BB17CA4F2A12FBF1004E4375 /* entitlements.plist */,
-				BB17CA3C2A12F59F004E4375 /* ContentView.swift */,
-				4DB3BCBF2C05E1AD00C3472A /* NewsView.swift */,
-				4D0439E22C106D9C00B79D9E /* ChannelView.swift */,
-				4DCD62C02C2C229400CC094F /* ChannelViewModel.swift */,
-				4DCD62BA2C2C225A00CC094F /* ChannelPlayView.swift */,
-				4D5A65852C3F3A5500B5DDE3 /* FullPlayerView.swift */,
-				4D5A65872C3FC02A00B5DDE3 /* PlayerModel.swift */,
-				4DCD62BC2C2C226D00CC094F /* AsyncImage.swift */,
-				4DCD62BE2C2C228D00CC094F /* ImageLoader.swift */,
-				4DB3BCCC2C05E1C400C3472A /* Models */,
 				BB17CA3E2A12F5A2004E4375 /* Assets.xcassets */,
 				BB17CA402A12F5A2004E4375 /* Preview Content */,
 			);
