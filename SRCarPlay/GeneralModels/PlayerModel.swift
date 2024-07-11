@@ -47,9 +47,7 @@ import SwiftUI
         guard let urlString = episodes?.broadcast?.broadcastfiles?.first?.url,
               let audioURL = URL(string: urlString) else { return }
         
-        if player == nil {
-            player = AVPlayer(url: audioURL)
-        }
+        player = AVPlayer(url: audioURL)
         player?.play()
         isPlaying = true
         
