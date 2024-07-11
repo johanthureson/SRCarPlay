@@ -27,6 +27,8 @@ import SwiftUI
     var player: AVPlayer?
     var isPlaying = false
     
+    private var lastUrlString: String?
+    
     var currentTime = 0.0
     
     var currentTimeBinding: Binding<Double> {
@@ -47,7 +49,12 @@ import SwiftUI
         guard let urlString = episodes?.broadcast?.broadcastfiles?.first?.url,
               let audioURL = URL(string: urlString) else { return }
         
-        player = AVPlayer(url: audioURL)
+        // Only restart player if episode changed
+        if urlString != lastUrlString {
+            player = AVPlayer(url: audioURL)
+            lastUrlString = urlString
+        }
+        
         player?.play()
         isPlaying = true
         
