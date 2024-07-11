@@ -6,7 +6,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @State private var selectedTab = 0
+    @Environment(PlayerModel.self) var playerModel
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -25,8 +27,10 @@ struct ContentView: View {
                     .tag(1)
             }
             
-            MiniPlayerView()
-                .offset(y: -48) // Adjust the offset if needed based on the TabBar's height
+            if playerModel.episodes != nil {
+                MiniPlayerView()
+                    .offset(y: -48) // Adjust the offset if needed based on the TabBar's height
+            }
         }
     }
 }

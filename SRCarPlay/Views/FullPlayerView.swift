@@ -11,10 +11,29 @@ import MediaPlayer
 struct FullPlayerView: View {
     
     @Environment(PlayerModel.self) var playerModel
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         if let episodes = playerModel.episodes {
             VStack {
+                HStack {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "chevron.down.circle.fill")
+                            .resizable()
+                            .font(.system(size: 20))
+                            .padding()
+                            .frame(width: 60, height: 60)
+                    }
+                    .accessibility(label: Text("Dismiss"))
+                    Spacer()
+                }
+                .padding()
+                // Add padding at the top for safe area clearance on devices with notch
+                
+                Spacer()
+                
                 if let imageUrl = episodes.imageurl, let url = URL(string: imageUrl) {
                     AsyncImage(url: url)
                         .frame(width: 100, height: 100)
@@ -102,14 +121,11 @@ struct FullPlayerView: View {
                             .padding(playerModel.padding)
                     }
                 }
+                
+                Spacer()
+                
             }
             .navigationBarTitle(Text(episodes.title ?? ""), displayMode: .inline)
-            .onAppear {
-                playerModel.play()
-            }
-            .onDisappear {
-                playerModel.timer?.invalidate()
-            }
         }
         
     }
