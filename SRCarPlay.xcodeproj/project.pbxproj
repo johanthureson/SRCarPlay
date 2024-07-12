@@ -22,10 +22,8 @@
 		4DB3BCD22C05E1C400C3472A /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCC82C05E1C400C3472A /* News.swift */; };
 		4DB3BCD32C05E1C400C3472A /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCC92C05E1C400C3472A /* Playlist.swift */; };
 		4DB3BCD42C05E1C400C3472A /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB3BCCA2C05E1C400C3472A /* Program.swift */; };
-		4DCD62BB2C2C225A00CC094F /* ChannelPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD62BA2C2C225A00CC094F /* ChannelPlayView.swift */; };
 		4DCD62BD2C2C226D00CC094F /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD62BC2C2C226D00CC094F /* AsyncImage.swift */; };
 		4DCD62BF2C2C228D00CC094F /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD62BE2C2C228D00CC094F /* ImageLoader.swift */; };
-		4DCD62C12C2C229400CC094F /* ChannelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD62C02C2C229400CC094F /* ChannelViewModel.swift */; };
 		BB17CA3B2A12F59F004E4375 /* SRCarPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17CA3A2A12F59F004E4375 /* SRCarPlayApp.swift */; };
 		BB17CA3D2A12F59F004E4375 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17CA3C2A12F59F004E4375 /* ContentView.swift */; };
 		BB17CA3F2A12F5A2004E4375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB17CA3E2A12F5A2004E4375 /* Assets.xcassets */; };
@@ -49,10 +47,8 @@
 		4DB3BCC82C05E1C400C3472A /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		4DB3BCC92C05E1C400C3472A /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		4DB3BCCA2C05E1C400C3472A /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
-		4DCD62BA2C2C225A00CC094F /* ChannelPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPlayView.swift; sourceTree = "<group>"; };
 		4DCD62BC2C2C226D00CC094F /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		4DCD62BE2C2C228D00CC094F /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		4DCD62C02C2C229400CC094F /* ChannelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewModel.swift; sourceTree = "<group>"; };
 		BB17CA372A12F59F004E4375 /* SRCarPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SRCarPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB17CA3A2A12F59F004E4375 /* SRCarPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRCarPlayApp.swift; sourceTree = "<group>"; };
 		BB17CA3C2A12F59F004E4375 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,7 +81,6 @@
 		4D5A658B2C3FC11C00B5DDE3 /* GeneralModels */ = {
 			isa = PBXGroup;
 			children = (
-				4DCD62C02C2C229400CC094F /* ChannelViewModel.swift */,
 				4D5A65872C3FC02A00B5DDE3 /* PlayerModel.swift */,
 			);
 			path = GeneralModels;
@@ -97,7 +92,6 @@
 				BB17CA3C2A12F59F004E4375 /* ContentView.swift */,
 				4DB3BCBF2C05E1AD00C3472A /* NewsView.swift */,
 				4D0439E22C106D9C00B79D9E /* ChannelView.swift */,
-				4DCD62BA2C2C225A00CC094F /* ChannelPlayView.swift */,
 				4D5A65852C3F3A5500B5DDE3 /* FullPlayerView.swift */,
 			);
 			path = Views;
@@ -246,7 +240,6 @@
 				4D5A65862C3F3A5500B5DDE3 /* FullPlayerView.swift in Sources */,
 				BB17CA3D2A12F59F004E4375 /* ContentView.swift in Sources */,
 				4D5A658F2C3FD56C00B5DDE3 /* MiniPlayerView.swift in Sources */,
-				4DCD62BB2C2C225A00CC094F /* ChannelPlayView.swift in Sources */,
 				BB17CA4B2A12F61C004E4375 /* CarPlaySceneDelegate.swift in Sources */,
 				4DB3BCD42C05E1C400C3472A /* Program.swift in Sources */,
 				4DB3BCD02C05E1C400C3472A /* Downloadpodfile.swift in Sources */,
@@ -257,7 +250,6 @@
 				4DCD62BD2C2C226D00CC094F /* AsyncImage.swift in Sources */,
 				4DB3BCD22C05E1C400C3472A /* News.swift in Sources */,
 				4DB3BCCE2C05E1C400C3472A /* Broadcastfiles.swift in Sources */,
-				4DCD62C12C2C229400CC094F /* ChannelViewModel.swift in Sources */,
 				4DB3BCC02C05E1AD00C3472A /* NewsView.swift in Sources */,
 				4DB3BCCF2C05E1C400C3472A /* Broadcasttime.swift in Sources */,
 				4DB3BCD12C05E1C400C3472A /* Episodes.swift in Sources */,

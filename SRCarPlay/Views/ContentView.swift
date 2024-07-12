@@ -9,7 +9,6 @@ struct ContentView: View {
     
     @State private var selectedTab = 0
     @Environment(PlayerModel.self) var playerModel
-    let channelViewModel = ChannelViewModel()
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -20,7 +19,7 @@ struct ContentView: View {
                         Text("Nyheter")
                     }
                     .tag(0)
-                ChannelView(viewModel: channelViewModel)
+                ChannelView()
                     .tabItem {
                         Image(systemName: "radio.fill")
                         Text("Kanaler")

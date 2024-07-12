@@ -11,14 +11,14 @@ import MediaPlayer
 
 struct ChannelView: View {
     
-    @ObservedObject var viewModel: ChannelViewModel
+    @State private var channels: [Channel] = []
     @Environment(PlayerModel.self) var playerModel
     
     var body: some View {
         
         List {
             Section {
-                ForEach(viewModel.channels, id: \.self) { channel in
+                ForEach(channels, id: \.self) { channel in
                     Button(action: {
                         self.playerModel.state = .channel
                         self.playerModel.initWith(channel: channel)
@@ -54,9 +54,29 @@ struct ChannelView: View {
         .navigationBarTitle("Kanaler", displayMode: .inline)
         
         .onAppear {
-            viewModel.loadChannels()
+            loadChannels()
         }
         
     }
+    
+    func loadChannels() {
+        guard let url = URL(string: "https://api.sr.se/api/v2/channels?format=json") else {
+            print("Invalid URL")
+            return
+        }
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                if let decodedResponse = try? JSONDecoder().decode(ChannelsResponse.self, from: data) {
+                    DispatchQueue.main.async {
+                        self.channels = decodedResponse.channels
+                    }
+                    return
+                }
+            }
+            print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+        }.resume()
+    }
+
 }
 
