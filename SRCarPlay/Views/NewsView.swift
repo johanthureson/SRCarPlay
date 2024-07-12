@@ -48,7 +48,7 @@ struct NewsView: View {
     }
     
     private func loadNews() {
-        guard let url = URL(string: "https://api.sr.se/api/v2/news/episodes?format=json") else {
+        guard let url = URL(string: Constants.getUrlStringFor(path: "news/episodes")) else {
             print("Invalid URL")
             return
         }
