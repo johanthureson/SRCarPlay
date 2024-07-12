@@ -64,7 +64,6 @@ import SwiftUI
         state = .channel
     }
     
-    
     func play() {
         
         configureAudioSession()
