@@ -69,6 +69,9 @@ import SwiftUI
     
     
     func play() {
+        
+        configureAudioSession()
+
         guard let audioUrlString,
               let audioURL = URL(string: audioUrlString)
         else { return }
@@ -92,6 +95,18 @@ import SwiftUI
             } else {
                 self.streamDuration = seconds
             }
+        }
+        
+    }
+    
+    // Configure the audio session
+    func configureAudioSession() {
+        do {
+            let audioSession = AVAudioSession.sharedInstance()
+            try audioSession.setCategory(.playback, mode: .default, options: [])
+            try audioSession.setActive(true)
+        } catch {
+            print("Failed to set audio session category. Error: \(error)")
         }
     }
     
