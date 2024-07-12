@@ -17,17 +17,19 @@ import SwiftUI
         case channel
     }
     
-    private var state: State = .inActive
+    var state: State = .inActive
     
     private var isUp = false
     
-    var episodes: Episodes?
-    var channel: Channel?
+    var imageUrl: URL?
+    var title: String?
+    var description: String?
+    var audioUrlString: String?
+    private var lastAudioUrlString: String?
     
     var player: AVPlayer?
     var isPlaying = false
     
-    private var lastUrlString: String?
     
     var currentTime = 0.0
     
@@ -37,22 +39,43 @@ import SwiftUI
             set: { self.currentTime = $0 }
         )
     }
-
+    
     var streamDuration = 0.0
     var timer: Timer? = nil
     let secondsBackward: Double = 5
     let secondsForward: Double = 30
     let padding: CGFloat = 5
     var timeControlStatus: AVPlayer.TimeControlStatus?
-
+    
+    func initWith(episode: Episodes) {
+        if let imageUrlString = episode.imageurl {
+            imageUrl = URL(string: imageUrlString)
+        }
+        title = episode.title
+        description = episode.description
+        audioUrlString = episode.broadcast?.broadcastfiles?.first?.url
+        state = .news
+    }
+    
+    func initWith(channel: Channel) {
+        if let imageUrlString = channel.image {
+            imageUrl = URL(string: imageUrlString)
+        }
+        title = channel.name
+        description = channel.tagline
+        audioUrlString = channel.liveaudio?.url
+        state = .channel
+    }
+    
+    
     func play() {
-        guard let urlString = episodes?.broadcast?.broadcastfiles?.first?.url,
-              let audioURL = URL(string: urlString) else { return }
-        
+        guard let audioUrlString,
+              let audioURL = URL(string: audioUrlString)
+        else { return }
         // Only restart player if episode changed
-        if urlString != lastUrlString {
+        if audioUrlString != lastAudioUrlString {
             player = AVPlayer(url: audioURL)
-            lastUrlString = urlString
+            lastAudioUrlString = audioUrlString
         }
         
         player?.play()
@@ -71,8 +94,6 @@ import SwiftUI
             }
         }
     }
-
-    
     
 }
 

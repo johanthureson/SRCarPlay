@@ -9,6 +9,7 @@ struct ContentView: View {
     
     @State private var selectedTab = 0
     @Environment(PlayerModel.self) var playerModel
+    let channelViewModel = ChannelViewModel()
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -19,7 +20,7 @@ struct ContentView: View {
                         Text("Nyheter")
                     }
                     .tag(0)
-                ChannelView(viewModel: ChannelViewModel())
+                ChannelView(viewModel: channelViewModel)
                     .tabItem {
                         Image(systemName: "radio.fill")
                         Text("Kanaler")
@@ -27,9 +28,9 @@ struct ContentView: View {
                     .tag(1)
             }
             
-            if playerModel.episodes != nil {
+            if playerModel.state != .inActive {
                 MiniPlayerView()
-                    .offset(y: -48) // Adjust the offset if needed based on the TabBar's height
+                    .offset(y: -53) // Adjust the offset if needed based on the TabBar's height
             }
         }
     }

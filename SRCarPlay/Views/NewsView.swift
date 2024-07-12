@@ -11,7 +11,6 @@ struct NewsView: View {
     
     @State private var news = News(episodes: [])
     @Environment(PlayerModel.self) var playerModel
-    @State private var selectedEpisode: Episodes?
     
     var body: some View {
         
@@ -19,7 +18,8 @@ struct NewsView: View {
             Section {
                 ForEach(news.episodes ?? [], id: \.self) { episode in
                     Button(action: {
-                        self.playerModel.episodes = episode
+                        self.playerModel.state = .news
+                        self.playerModel.initWith(episode: episode)
                         self.playerModel.play()
                     }) {
                         HStack {
@@ -36,7 +36,7 @@ struct NewsView: View {
                 }
                 
             } footer: {
-                if playerModel.episodes != nil {
+                if playerModel.state != .inActive {
                     Spacer()
                         .frame(height: 64)
                         .background(Color.clear)

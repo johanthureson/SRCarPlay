@@ -14,7 +14,7 @@ struct FullPlayerView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        if let episodes = playerModel.episodes {
+        if playerModel.state != .inActive {
             VStack {
                 HStack {
                     Button(action: {
@@ -34,43 +34,48 @@ struct FullPlayerView: View {
                 
                 Spacer()
                 
-                if let imageUrl = episodes.imageurl, let url = URL(string: imageUrl) {
-                    AsyncImage(url: url)
+                if let imageUrl = playerModel.imageUrl { // = playerModel.state == .news ? item.imageurl : item.image, let url = URL(string: imageUrl) {
+                    AsyncImage(url: imageUrl)
                         .frame(width: 100, height: 100)
                         .aspectRatio(contentMode: .fit)
                 }
-                Text(episodes.title ?? "")
+                Text(playerModel.title ?? "")
                     .font(.largeTitle)
                     .padding()
-                Text(episodes.description ?? "")
+                Text(playerModel.description ?? "")
                     .font(.subheadline)
                     .padding()
-                VStack {
-                    HStack {
-                        Text("\(secondsToHoursMinutesSeconds(seconds: Int(playerModel.currentTime)))")
-                        Spacer()
-                        Text("-\(secondsToHoursMinutesSeconds(seconds: Int(playerModel.streamDuration - playerModel.currentTime)))")
+                if playerModel.state == .news {
+                    VStack {
+                        HStack {
+                            Text("\(secondsToHoursMinutesSeconds(seconds: Int(playerModel.currentTime)))")
+                            Spacer()
+                            Text("-\(secondsToHoursMinutesSeconds(seconds: Int(playerModel.streamDuration - playerModel.currentTime)))")
+                        }
+                        
+                        Slider(value: playerModel.currentTimeBinding, in: 0...playerModel.streamDuration, onEditingChanged: sliderEditingChanged)
+                        
                     }
-                    
-                    Slider(value: playerModel.currentTimeBinding, in: 0...playerModel.streamDuration, onEditingChanged: sliderEditingChanged)
-                    
+                    .padding()
+                    .padding(.horizontal)
                 }
-                .padding()
-                .padding(.horizontal)
                 
                 Spacer()
                     .frame(height: 0)
                 
                 HStack(spacing: 0) {
                     
-                    Button(action: {
-                        playerModel.player?.seek(to: .zero)
-                        playerModel.player?.play()
-                        playerModel.isPlaying = true
-                    }) {
-                        Image(systemName: "backward.fill")
-                            .font(.system(size: 30))
-                            .padding(playerModel.padding)
+                    if playerModel.state == .news {
+                        
+                        Button(action: {
+                            playerModel.player?.seek(to: .zero)
+                            playerModel.player?.play()
+                            playerModel.isPlaying = true
+                        }) {
+                            Image(systemName: "backward.fill")
+                                .font(.system(size: 30))
+                                .padding(playerModel.padding)
+                        }
                     }
                     
                     Button(action: {
@@ -100,6 +105,7 @@ struct FullPlayerView: View {
                             .padding(playerModel.padding)
                     }
                     
+                    
                     Button(action: {
                         playerModel.player?.seek(to: CMTime(seconds: (playerModel.player?.currentTime().seconds ?? 0) + playerModel.secondsForward, preferredTimescale: 1))
                     }) {
@@ -112,20 +118,22 @@ struct FullPlayerView: View {
                                 .offset(y: 2)
                         }
                     }
-                    
-                    Button(action: {
-                        playerModel.player?.seek(to: playerModel.player?.currentItem?.duration ?? .zero)
-                    }) {
-                        Image(systemName: "forward.fill")
-                            .font(.system(size: 30))
-                            .padding(playerModel.padding)
+                    if playerModel.state == .news {
+                        
+                        Button(action: {
+                            playerModel.player?.seek(to: playerModel.player?.currentItem?.duration ?? .zero)
+                        }) {
+                            Image(systemName: "forward.fill")
+                                .font(.system(size: 30))
+                                .padding(playerModel.padding)
+                        }
                     }
                 }
                 
                 Spacer()
                 
             }
-            .navigationBarTitle(Text(episodes.title ?? ""), displayMode: .inline)
+            .navigationBarTitle(Text(playerModel.title ?? ""), displayMode: .inline)
         }
         
     }

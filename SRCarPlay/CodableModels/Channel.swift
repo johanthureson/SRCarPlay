@@ -4,7 +4,15 @@ struct ChannelsResponse: Codable {
     let channels: [Channel]
 }
 
-struct Channel: Codable, Identifiable {
+struct Channel: Codable, Identifiable, Hashable {
+    static func == (lhs: Channel, rhs: Channel) -> Bool {
+        lhs.id ?? 0 == rhs.id ?? 1
+    }
+    // Conformance to Hashable
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
     let image : String?
     let imagetemplate : String?
     let color : String?
@@ -16,9 +24,9 @@ struct Channel: Codable, Identifiable {
     let xmltvid : String?
     let id : Int?
     let name : String?
-
+    
     enum CodingKeys: String, CodingKey {
-
+        
         case image = "image"
         case imagetemplate = "imagetemplate"
         case color = "color"
@@ -31,7 +39,7 @@ struct Channel: Codable, Identifiable {
         case id = "id"
         case name = "name"
     }
-
+    
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         image = try values.decodeIfPresent(String.self, forKey: .image)
@@ -46,6 +54,6 @@ struct Channel: Codable, Identifiable {
         id = try values.decodeIfPresent(Int.self, forKey: .id)
         name = try values.decodeIfPresent(String.self, forKey: .name)
     }
-
+    
 }
 

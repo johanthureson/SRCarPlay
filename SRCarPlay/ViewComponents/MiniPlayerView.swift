@@ -29,7 +29,7 @@ struct MiniPlayerView: View {
                         .frame(width: 30, height: 30)
                         .padding(.vertical)
                     
-                    Text(playerModel.episodes?.title ?? " ")
+                    Text(playerModel.title ?? " ")
                         .padding()
                     Spacer()
                 }
