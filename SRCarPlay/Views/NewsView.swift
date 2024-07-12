@@ -21,7 +21,7 @@ struct NewsView: View {
                 
             } footer: {
                 
-                footerSpaceForMiniPlayer
+                MiniPlayerFooterSpaceView()
                 
             }
         }
@@ -47,15 +47,6 @@ struct NewsView: View {
                         .frame(height: 32)
                 }
             }
-        }
-    }
-    
-    @ViewBuilder
-    private var footerSpaceForMiniPlayer: some View {
-        if playerModel.state != .inActive {
-            Spacer()
-                .frame(height: 64)
-                .background(Color.clear)
         }
     }
     

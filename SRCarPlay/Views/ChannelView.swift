@@ -44,11 +44,9 @@ struct ChannelView: View {
                 }
                 
             } footer: {
-                if playerModel.state != .inActive {
-                    Spacer()
-                        .frame(height: 64)
-                        .background(Color.clear)
-                }
+                
+                MiniPlayerFooterSpaceView()
+                
             }
         }
         .navigationBarTitle("Kanaler", displayMode: .inline)
