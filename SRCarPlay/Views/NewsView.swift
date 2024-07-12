@@ -16,35 +16,47 @@ struct NewsView: View {
         
         List {
             Section {
-                ForEach(news.episodes ?? [], id: \.self) { episode in
-                    Button(action: {
-                        self.playerModel.state = .news
-                        self.playerModel.initWith(episode: episode)
-                        self.playerModel.play()
-                    }) {
-                        HStack {
-                            if let imageUrl = episode.imageurl, let url = URL(string: imageUrl) {
-                                AsyncImage(url: url)
-                                    .frame(width: 50, height: 50)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                            }
-                            Spacer().frame(width: 16)
-                            Text(episode.title ?? "")
-                                .frame(height: 32)
-                        }
-                    }
-                }
+                
+                newsList
                 
             } footer: {
-                if playerModel.state != .inActive {
-                    Spacer()
-                        .frame(height: 64)
-                        .background(Color.clear)
-                }
+                
+                footerSpaceForMiniPlayer
+                
             }
         }
         .onAppear(perform: loadNews)
         .navigationBarTitle("Nyheter", displayMode: .inline)
+    }
+    
+    private var newsList: some View {
+        ForEach(news.episodes ?? [], id: \.self) { episode in
+            Button(action: {
+                self.playerModel.state = .news
+                self.playerModel.initWith(episode: episode)
+                self.playerModel.play()
+            }) {
+                HStack {
+                    if let imageUrl = episode.imageurl, let url = URL(string: imageUrl) {
+                        AsyncImage(url: url)
+                            .frame(width: 50, height: 50)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                    }
+                    Spacer().frame(width: 16)
+                    Text(episode.title ?? "")
+                        .frame(height: 32)
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var footerSpaceForMiniPlayer: some View {
+        if playerModel.state != .inActive {
+            Spacer()
+                .frame(height: 64)
+                .background(Color.clear)
+        }
     }
     
     private func loadNews() {
