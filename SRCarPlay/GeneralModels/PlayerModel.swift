@@ -42,7 +42,6 @@ import SwiftUI
     private var timer: Timer? = nil
     let secondsBackward: Double = 5
     let secondsForward: Double = 30
-    let padding: CGFloat = 5
     var timeControlStatus: AVPlayer.TimeControlStatus?
     
     func initWith(episode: Episodes) {

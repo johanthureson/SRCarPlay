@@ -12,6 +12,7 @@ struct FullPlayerView: View {
     
     @Environment(PlayerModel.self) private var playerModel
     @Environment(\.presentationMode) private var presentationMode
+    let padding: CGFloat = 5
     
     var body: some View {
         if playerModel.state != .inActive {
@@ -108,7 +109,7 @@ struct FullPlayerView: View {
                 }) {
                     Image(systemName: "backward.fill")
                         .font(.system(size: 30))
-                        .padding(playerModel.padding)
+                        .padding(padding)
                 }
             }
             
@@ -119,7 +120,7 @@ struct FullPlayerView: View {
                 ZStack {
                     Image(systemName: "gobackward")
                         .font(.system(size: 45))
-                        .padding(playerModel.padding)
+                        .padding(padding)
                     Text(String(Int(playerModel.secondsBackward)))
                         .bold()
                         .offset(y: 2)
@@ -136,7 +137,7 @@ struct FullPlayerView: View {
             }) {
                 Image(systemName: playerModel.isPlaying ? "pause.circle" : "play.circle")
                     .font(.system(size: 60))
-                    .padding(playerModel.padding)
+                    .padding(padding)
             }
             
             
@@ -146,7 +147,7 @@ struct FullPlayerView: View {
                 ZStack {
                     Image(systemName: "goforward")
                         .font(.system(size: 45))
-                        .padding(playerModel.padding)
+                        .padding(padding)
                     Text(String(Int(playerModel.secondsForward)))
                         .bold()
                         .offset(y: 2)
@@ -159,7 +160,7 @@ struct FullPlayerView: View {
                 }) {
                     Image(systemName: "forward.fill")
                         .font(.system(size: 30))
-                        .padding(playerModel.padding)
+                        .padding(padding)
                 }
             }
         }
