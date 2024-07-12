@@ -34,7 +34,7 @@ struct FullPlayerView: View {
                 
                 Spacer()
                 
-                if let imageUrl = playerModel.imageUrl { // = playerModel.state == .news ? item.imageurl : item.image, let url = URL(string: imageUrl) {
+                if let imageUrl = playerModel.imageUrl {
                     AsyncImage(url: imageUrl)
                         .frame(width: 100, height: 100)
                         .aspectRatio(contentMode: .fit)
