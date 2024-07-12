@@ -7,7 +7,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var selectedTab = 0
+    @State private var selectedTab: Int = UserDefaults.standard.integer(forKey: "selectedTab")
     @Environment(PlayerModel.self) var playerModel
     
     var body: some View {
@@ -25,6 +25,14 @@ struct ContentView: View {
                         Text("Kanaler")
                     }
                     .tag(1)
+            }
+            .onAppear {
+                // Read the last selected tab from UserDefaults when the view appears
+                selectedTab = UserDefaults.standard.integer(forKey: "selectedTab")
+            }
+            .onChange(of: selectedTab) { _, newValue in
+                // Save the newly selected tab to UserDefaults
+                UserDefaults.standard.set(newValue, forKey: "selectedTab")
             }
             
             if playerModel.state != .inActive {
