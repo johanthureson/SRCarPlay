@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AsyncImage: View {
     @StateObject private var loader: ImageLoader
-    var placeholder: Image
+    private var placeholder: Image
 
     init(url: URL, placeholder: Image = Image(systemName: "photo.circle.fill")) {
         _loader = StateObject(wrappedValue: ImageLoader(url: url))

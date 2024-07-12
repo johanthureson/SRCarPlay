@@ -19,8 +19,6 @@ import SwiftUI
     
     var state: State = .inActive
     
-    private var isUp = false
-    
     var imageUrl: URL?
     var title: String?
     var description: String?
@@ -41,7 +39,7 @@ import SwiftUI
     }
     
     var streamDuration = 0.0
-    var timer: Timer? = nil
+    private var timer: Timer? = nil
     let secondsBackward: Double = 5
     let secondsForward: Double = 30
     let padding: CGFloat = 5
@@ -100,7 +98,7 @@ import SwiftUI
     }
     
     // Configure the audio session
-    func configureAudioSession() {
+    private func configureAudioSession() {
         do {
             let audioSession = AVAudioSession.sharedInstance()
             try audioSession.setCategory(.playback, mode: .default, options: [])

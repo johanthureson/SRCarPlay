@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MiniPlayerView: View {
     
-    @Environment(PlayerModel.self) var playerModel
+    @Environment(PlayerModel.self) private var playerModel
     @State private var showFullPlayer = false
     
     var body: some View {

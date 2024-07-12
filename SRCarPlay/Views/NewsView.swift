@@ -10,7 +10,7 @@ import SwiftUI
 struct NewsView: View {
     
     @State private var news = News(episodes: [])
-    @Environment(PlayerModel.self) var playerModel
+    @Environment(PlayerModel.self) private var playerModel
     
     var body: some View {
         
@@ -47,7 +47,7 @@ struct NewsView: View {
         .navigationBarTitle("Nyheter", displayMode: .inline)
     }
     
-    func loadNews() {
+    private func loadNews() {
         guard let url = URL(string: "https://api.sr.se/api/v2/news/episodes?format=json") else {
             print("Invalid URL")
             return

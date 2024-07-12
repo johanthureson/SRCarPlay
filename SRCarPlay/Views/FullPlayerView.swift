@@ -10,8 +10,8 @@ import MediaPlayer
 
 struct FullPlayerView: View {
     
-    @Environment(PlayerModel.self) var playerModel
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(PlayerModel.self) private var playerModel
+    @Environment(\.presentationMode) private var presentationMode
     
     var body: some View {
         if playerModel.state != .inActive {

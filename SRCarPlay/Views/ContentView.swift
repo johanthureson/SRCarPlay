@@ -8,7 +8,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var selectedTab: Int = UserDefaults.standard.integer(forKey: "selectedTab")
-    @Environment(PlayerModel.self) var playerModel
+    @Environment(PlayerModel.self) private var playerModel
     
     var body: some View {
         ZStack(alignment: .bottom) {

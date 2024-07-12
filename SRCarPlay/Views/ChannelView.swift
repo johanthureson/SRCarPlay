@@ -59,7 +59,7 @@ struct ChannelView: View {
         
     }
     
-    func loadChannels() {
+    private func loadChannels() {
         guard let url = URL(string: "https://api.sr.se/api/v2/channels?format=json") else {
             print("Invalid URL")
             return

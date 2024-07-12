@@ -254,7 +254,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         player?.play()
     }
     
-    func setupAudioSession() {
+    private func setupAudioSession() {
         do {
             // Set the audio session category to playback
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
