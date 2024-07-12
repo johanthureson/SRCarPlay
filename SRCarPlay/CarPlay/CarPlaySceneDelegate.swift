@@ -204,6 +204,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         interfaceController?.pushTemplate(nowPlayingTemplate, animated: true) { _, _ in }
         
         // Start playing the audio
+        setupAudioSession()
         player?.play()
     }
     
@@ -249,7 +250,19 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         interfaceController?.pushTemplate(nowPlayingTemplate, animated: true) { _, _ in }
         
         // Start playing the live audio
+        setupAudioSession()
         player?.play()
+    }
+    
+    func setupAudioSession() {
+        do {
+            // Set the audio session category to playback
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            // Activate the audio session
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("Failed to set up audio session for background playback: \(error)")
+        }
     }
  
     private func setupNowPlayingInfoCenter() {
