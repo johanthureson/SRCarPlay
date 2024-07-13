@@ -85,3 +85,13 @@ struct MiniPlayerView: View {
     }
     
 }
+
+#Preview {
+    let playerModel = PlayerModel()
+    playerModel.state = .news
+    let episode = Episodes(mockID: 0)
+    playerModel.initWith(episode: episode)
+    return MiniPlayerView()
+        .environment(playerModel)
+        .accentColor(.black)
+}

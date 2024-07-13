@@ -85,5 +85,25 @@ struct Episodes : Codable, Identifiable, Hashable {
 		downloadpodfile = try values.decodeIfPresent(Downloadpodfile.self, forKey: .downloadpodfile)
 		relatedepisodes = try values.decodeIfPresent([String].self, forKey: .relatedepisodes)
 	}
+    
+    // Custom initializer for mock data
+    init(mockID: Int) {
+        id = mockID
+        title = "Title"
+        description = "Description"
+        url = nil
+        program = nil
+        audiopreference = nil
+        audiopriority = nil
+        audiopresentation = nil
+        publishdateutc = nil
+        imageurl = nil
+        imageurltemplate = nil
+        photographer = nil
+        broadcast = nil
+        broadcasttime = nil
+        downloadpodfile = nil
+        relatedepisodes = nil
+    }
 
 }

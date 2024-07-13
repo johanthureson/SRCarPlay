@@ -26,7 +26,9 @@ struct NewsView: View {
             }
         }
         .onAppear(perform: loadNews)
+
         .navigationBarTitle("Nyheter", displayMode: .inline)
+        
     }
     
     private var newsList: some View {
@@ -70,4 +72,11 @@ struct NewsView: View {
             print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
         }.resume()
     }
+    
+}
+
+#Preview {
+    NewsView()
+        .environment(PlayerModel())
+        .accentColor(.black)
 }

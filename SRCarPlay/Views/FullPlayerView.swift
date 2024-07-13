@@ -199,3 +199,15 @@ struct FullPlayerView: View {
         return String(format: "%d:%02d:%02d", h, m, s)
     }
 }
+
+#Preview {
+    let playerModel = PlayerModel()
+    playerModel.state = .news
+    playerModel.currentTime = 10
+    playerModel.streamDuration = 20
+    let episode = Episodes(mockID: 0)
+    playerModel.initWith(episode: episode)
+    return FullPlayerView()
+        .environment(playerModel)
+        .accentColor(.black)
+}

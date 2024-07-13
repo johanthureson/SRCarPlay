@@ -85,3 +85,8 @@ struct ChannelView: View {
 
 }
 
+#Preview {
+    ChannelView()
+        .environment(PlayerModel())
+        .accentColor(.black)
+}
